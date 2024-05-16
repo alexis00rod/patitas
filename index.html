@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patitas</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="icon" href="./assets/patitas-logo.jpg" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="page">
+      <!-- Navbar -->
+      <header>
+        <nav class="navbar">
+          <!-- Logo -->
+          <h1 class="logo">
+            <a href="./index.html">
+              <img src="./assets/patitas-logo.jpg" alt="" />
+              <span>Patitas</span>
+            </a>
+          </h1>
+          <!-- Links -->
+          <ul id="navbar-container" class="navbar-container">
+            <!-- Inicio -->
+            <li class="navbar-item">
+              <a href="./index.html" class="active">Inicio</a>
+            </li>
+            <!-- Tienda -->
+            <li class="navbar-item">
+              <span>Tienda <i class="fa-solid fa-chevron-down"></i></span>
+              <ul class="navbar-dropdown">
+                <!-- Productos -->
+                <li class="navbar-dropdown-item">
+                  <a href="./pages/productos.html">Productos</a>
+                </li>
+                <!-- Servicios -->
+                <li class="navbar-dropdown-item">
+                  <a href="./pages/servicios.html">Servicios</a>
+                </li>
+              </ul>
+            </li>
+            <!-- Sobre nosotros -->
+            <li class="navbar-item">
+              <a href="./pages/sobre-nosotros.html">Sobre nosotros</a>
+            </li>
+            <!-- Contactanos -->
+            <li class="navbar-item">
+              <a href="./pages/contactanos.html" class="button">Contactanos</a>
+            </li>
+          </ul>
+          <!-- Boton abrir navbar cuando la resolucion es menor a 1000px -->
+          <button
+            id="navbar-button"
+            class="navbar-button"
+            onclick="openNavbar()"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </nav>
+      </header>
+      <main>
+        <!-- Hero -->
+        <section class="hero">
+          <div class="hero-left">
+            <h2>Lorem <span>ipsum</span> dolor sit.</h2>
+            <h3>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat,
+              est.
+            </h3>
+            <div class="hero-cta">
+              <a href="./pages/productos.html" class="btn btn-primary"
+                >Productos</a
+              >
+              <a href="./pages/servicios.html" class="btn btn-primary"
+                >Servicios</a
+              >
+            </div>
+          </div>
+          <div class="hero-right">
+            <img src="./assets/leon.png" alt="" />
+          </div>
+        </section>
+        <section>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde iure
+            sint, delectus consectetur beatae perferendis eaque eius iste,
+            accusantium ex dignissimos explicabo voluptatum sequi! Delectus
+            maiores minima ex libero ipsum! Illo necessitatibus delectus ratione
+            aut praesentium assumenda eaque odio sequi cum, nam, cumque a
+            officiis maxime accusantium blanditiis, quasi nihil atque. Porro
+            modi pariatur dolorum temporibus! Laboriosam, ipsum sint? Aliquam?
+            Veritatis illum, provident labore obcaecati iusto sint consequuntur
+            sit voluptas nulla ab? Ab, iure recusandae aut, minus laborum,
+            deserunt soluta quas sequi cumque doloremque repudiandae unde magni
+            fugiat corrupti nostrum? Libero quidem eaque tenetur, suscipit unde
+            itaque ratione reiciendis voluptas quod impedit corrupti minima sed
+            enim. Tempora nulla velit totam ipsa cumque autem commodi tempore
+            veniam, modi est eum expedita? Eos, recusandae voluptatibus id,
+            distinctio beatae quis perspiciatis ad sapiente iusto provident
+            consequatur fugit explicabo. Voluptatibus, non optio ab labore
+            impedit tempore, et atque rem, exercitationem facilis commodi
+            praesentium error? Tempora reiciendis officiis molestiae voluptatem
+            error nam, eius quas tenetur molestias? Repellat, error?
+            Reprehenderit, perferendis quo? Quod illum accusamus quidem
+            exercitationem dolor consectetur dolore. Tenetur quos inventore
+            reprehenderit eum quis! Laboriosam fugit odit molestiae fuga magnam
+            illo nisi quasi commodi est tenetur, nostrum, recusandae tempore
+            quam corporis, veritatis suscipit voluptas? Inventore, numquam quos
+            nihil blanditiis qui labore maxime enim molestias. Dolore voluptates
+            dicta necessitatibus sequi asperiores eveniet vero labore, ex, rem
+            at iste perferendis neque laboriosam laudantium doloremque non
+            voluptatem debitis commodi excepturi veniam minima. Excepturi
+            aliquid sed nesciunt quidem. Incidunt aliquid totam officiis
+            asperiores sequi numquam dolor autem quia, rerum quidem. Odio sint
+            quod repudiandae illo vero dolorem recusandae quas quibusdam tempore
+            voluptates ullam accusantium, explicabo dignissimos beatae! Vel.
+            Sunt rerum voluptas earum similique sint, quasi eum! Praesentium
+            temporibus veniam, in ipsum odit culpa recusandae maxime doloremque
+            earum voluptas aspernatur, beatae laudantium officia reprehenderit
+            quidem, magni quo ab voluptatem?
+          </p>
+        </section>
+        <section>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde iure
+            sint, delectus consectetur beatae perferendis eaque eius iste,
+            accusantium ex dignissimos explicabo voluptatum sequi! Delectus
+            maiores minima ex libero ipsum! Illo necessitatibus delectus ratione
+            aut praesentium assumenda eaque odio sequi cum, nam, cumque a
+            officiis maxime accusantium blanditiis, quasi nihil atque. Porro
+            modi pariatur dolorum temporibus! Laboriosam, ipsum sint? Aliquam?
+            Veritatis illum, provident labore obcaecati iusto sint consequuntur
+            sit voluptas nulla ab? Ab, iure recusandae aut, minus laborum,
+            deserunt soluta quas sequi cumque doloremque repudiandae unde magni
+            fugiat corrupti nostrum? Libero quidem eaque tenetur, suscipit unde
+            itaque ratione reiciendis voluptas quod impedit corrupti minima sed
+            enim. Tempora nulla velit totam ipsa cumque autem commodi tempore
+            veniam, modi est eum expedita? Eos, recusandae voluptatibus id,
+            distinctio beatae quis perspiciatis ad sapiente iusto provident
+            consequatur fugit explicabo. Voluptatibus, non optio ab labore
+            impedit tempore, et atque rem, exercitationem facilis commodi
+            praesentium error? Tempora reiciendis officiis molestiae voluptatem
+            error nam, eius quas tenetur molestias? Repellat, error?
+            Reprehenderit, perferendis quo? Quod illum accusamus quidem
+            exercitationem dolor consectetur dolore. Tenetur quos inventore
+            reprehenderit eum quis! Laboriosam fugit odit molestiae fuga magnam
+            illo nisi quasi commodi est tenetur, nostrum, recusandae tempore
+            quam corporis, veritatis suscipit voluptas? Inventore, numquam quos
+            nihil blanditiis qui labore maxime enim molestias. Dolore voluptates
+            dicta necessitatibus sequi asperiores eveniet vero labore, ex, rem
+            at iste perferendis neque laboriosam laudantium doloremque non
+            voluptatem debitis commodi excepturi veniam minima. Excepturi
+            aliquid sed nesciunt quidem. Incidunt aliquid totam officiis
+            asperiores sequi numquam dolor autem quia, rerum quidem. Odio sint
+            quod repudiandae illo vero dolorem recusandae quas quibusdam tempore
+            voluptates ullam accusantium, explicabo dignissimos beatae! Vel.
+            Sunt rerum voluptas earum similique sint, quasi eum! Praesentium
+            temporibus veniam, in ipsum odit culpa recusandae maxime doloremque
+            earum voluptas aspernatur, beatae laudantium officia reprehenderit
+            quidem, magni quo ab voluptatem?
+          </p>
+        </section>
+        <section>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde iure
+            sint, delectus consectetur beatae perferendis eaque eius iste,
+            accusantium ex dignissimos explicabo voluptatum sequi! Delectus
+            maiores minima ex libero ipsum! Illo necessitatibus delectus ratione
+            aut praesentium assumenda eaque odio sequi cum, nam, cumque a
+            officiis maxime accusantium blanditiis, quasi nihil atque. Porro
+            modi pariatur dolorum temporibus! Laboriosam, ipsum sint? Aliquam?
+            Veritatis illum, provident labore obcaecati iusto sint consequuntur
+            sit voluptas nulla ab? Ab, iure recusandae aut, minus laborum,
+            deserunt soluta quas sequi cumque doloremque repudiandae unde magni
+            fugiat corrupti nostrum? Libero quidem eaque tenetur, suscipit unde
+            itaque ratione reiciendis voluptas quod impedit corrupti minima sed
+            enim. Tempora nulla velit totam ipsa cumque autem commodi tempore
+            veniam, modi est eum expedita? Eos, recusandae voluptatibus id,
+            distinctio beatae quis perspiciatis ad sapiente iusto provident
+            consequatur fugit explicabo. Voluptatibus, non optio ab labore
+            impedit tempore, et atque rem, exercitationem facilis commodi
+            praesentium error? Tempora reiciendis officiis molestiae voluptatem
+            error nam, eius quas tenetur molestias? Repellat, error?
+            Reprehenderit, perferendis quo? Quod illum accusamus quidem
+            exercitationem dolor consectetur dolore. Tenetur quos inventore
+            reprehenderit eum quis! Laboriosam fugit odit molestiae fuga magnam
+            illo nisi quasi commodi est tenetur, nostrum, recusandae tempore
+            quam corporis, veritatis suscipit voluptas? Inventore, numquam quos
+            nihil blanditiis qui labore maxime enim molestias. Dolore voluptates
+            dicta necessitatibus sequi asperiores eveniet vero labore, ex, rem
+            at iste perferendis neque laboriosam laudantium doloremque non
+            voluptatem debitis commodi excepturi veniam minima. Excepturi
+            aliquid sed nesciunt quidem. Incidunt aliquid totam officiis
+            asperiores sequi numquam dolor autem quia, rerum quidem. Odio sint
+            quod repudiandae illo vero dolorem recusandae quas quibusdam tempore
+            voluptates ullam accusantium, explicabo dignissimos beatae! Vel.
+            Sunt rerum voluptas earum similique sint, quasi eum! Praesentium
+            temporibus veniam, in ipsum odit culpa recusandae maxime doloremque
+            earum voluptas aspernatur, beatae laudantium officia reprehenderit
+            quidem, magni quo ab voluptatem?
+          </p>
+        </section>
+      </main>
+    </div>
+    <footer>
+      <div class="footer"><h2>Veterinaria</h2></div>
+    </footer>
+    <!-- Javascript -->
+    <script src="./app.js"></script>
+  </body>
+</html>
