@@ -185,8 +185,8 @@ header {
 
 /* Hero */
 .hero {
-  min-height: 500px;
-  padding: 1rem;
+  /* min-height: 500px; */
+  /* padding: 1rem; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -225,28 +225,94 @@ header {
 
 /* Main */
 main {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem;
+  /* width: 100%; */
+  /* max-width: 1200px; */
+  /* margin: 0 auto; */
+  /* padding: 1rem; */
   display: flex;
   flex-direction: column;
   gap: 2rem;
   flex-grow: 1;
 }
 
+/* Section */
+section {
+  /* min-height: 500px; */
+  padding: 0.5rem;
+}
+
 /* Footer */
 footer {
   width: 100%;
-  height: 120px;
+  min-height: 120px;
+  margin-top: 2rem;
   background-color: var(--footer);
-  border-top: 0.1rem solid var(--naranja);
 }
 .footer {
   width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.footer .container {
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+.footer h4 {
+  margin-bottom: 0.7rem;
+  font-size: 1.2rem;
+  text-align: center;
+  color: var(--naranja);
+}
+.footer p {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+.footer p i {
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  color: var(--naranja);
+  font-size: 1.2rem;
+}
+.footer-socials {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.footer-left,
+.footer-center,
+.footer-right {
+  display: flex;
+  flex-direction: column;
+}
+.footer-bottom {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--naranja-oscuro);
+  color: var(--blanco);
+  font-size: 0.8rem;
+}
+.footer-bottom p {
+  margin: 0 !important;
+}
+
+/* Container */
+.container {
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 1rem;
 }
 
 /* Botones */
@@ -259,15 +325,89 @@ footer {
   font-size: 0.9rem;
   font-weight: 700;
   border-radius: 0.3rem;
-  cursor: default;
+  cursor: pointer;
+  transition-duration: var(--duracion);
+}
+.btn-circle {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition-duration: var(--duracion);
 }
 .btn-primary {
   background: var(--naranja);
-  color: var(--blanco);
-  transition-duration: var(--duracion);
+  color: var(--blanco) !important;
 }
 .btn-primary:hover {
   background: var(--naranja-oscuro);
+}
+
+/* Newsletter */
+.newsletter {
+  /* height: 400px; */
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--naranja);
+  color: var(--blanco);
+}
+.newsletter-container {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.newsletter-container span,
+.newsletter-container h3,
+.newsletter-container p {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.newsletter-container span {
+  font-size: 0.8rem;
+}
+.newsletter-container h3 {
+  font-size: 2rem;
+}
+.newsletter-container p {
+  font-size: 0.9rem;
+}
+.newsletter-email {
+  margin-top: 1rem;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  background: var(--blanco);
+  border-radius: 0.2rem;
+}
+.newsletter-email input {
+  padding: 0 1rem;
+  flex-grow: 1;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 0.9rem;
+  font-family: var(--fuente-poppins);
+}
+.newsletter-email i {
+  width: 40px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  font-size: 1.2rem;
+  color: var(--naranja);
 }
 
 /* Media queries mobile */
@@ -306,7 +446,7 @@ footer {
     align-items: center;
     background-color: var(--naranja);
     color: var(--blanco);
-    border-radius: 2rem;
+    border-radius: 0.3rem;
   }
   .navbar-item .button:hover {
     color: var(--blanco);
@@ -346,5 +486,17 @@ footer {
   }
   .hero-right img {
     display: flex;
+  }
+  /* Footer */
+  .footer .container {
+    flex-direction: row;
+    align-items: start;
+    justify-content: space-between;
+  }
+  .footer h4 {
+    text-align: start;
+  }
+  .footer-socials {
+    justify-content: start;
   }
 }
