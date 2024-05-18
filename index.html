@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Patitas</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/carrusel.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -87,6 +88,25 @@
             <img src="./assets/leon.png" alt="" />
           </div>
         </section>
+
+        <!--Carrusel Productos-->
+        <div class="wrapper" id="shop-container">
+          <i id="left" class="fa-solid fa-angle-left"></i>
+            <ul class="carousel">
+
+            </ul>
+          <i id="right" class="fa-solid fa-angle-right"></i>
+        </div>
+      
+        <!--Carrusel Servicios-->
+        <div class="wrapper" id="service-container">
+          <i id="left" class="fa-solid fa-angle-left"></i>
+            <ul class="carousel">
+
+            </ul>
+          <i id="right" class="fa-solid fa-angle-right"></i>
+        </div>
+
         <!-- Newsletter -->
         <section class="newsletter">
           <div class="newsletter-container">
@@ -138,5 +158,7 @@
     </footer>
     <!-- Javascript -->
     <script src="./app.js"></script>
+    <script src="./script/carruselProduct.js"></script>
+    <script src="./script/carruselService.js"></script>
   </body>
 </html>
