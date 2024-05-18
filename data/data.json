@@ -1,68 +1,72 @@
 {
-    "service": [
-        {
-            "title": "Curaciones",
-            "img": "/assets/img/Atencion.webp",
-            "description": "Ofrecemos servicios de curación y atención médica para mascotas, incluyendo el tratamiento de heridas, curas de heridas postoperatorias, y atención de emergencia.",
-            "type": "Servicio"
-        },{
-            "title": "Antiparasitos",
-            "img": "/assets/img/AntiParasitos.webp",
-            "description": "Proporcionamos una amplia gama de tratamientos antiparasitarios para ayudar a proteger a tu mascota de pulgas, garrapatas, ácaros y otros parásitos comunes.",
-            "type": "Servicio"
-        },{
-            "title": "Cirugías",
-            "img": "/assets/img/Curacion.webp",
-            "description": "Nuestro equipo de veterinarios altamente capacitados realiza una variedad de cirugías para mantener la salud y el bienestar de tu mascota, desde procedimientos de esterilización hasta cirugías correctivas.",
-            "type": "Servicio"
-        }
-      ],    
-      "shop":[
-        {
-            "name": "RAZA Adultos",
-            "img": "/assets/img/PerroComidaAdulto.webp",
-            "description": "Alimento balanceado para perras adultos y tamaños.",
-            "type": "Alimento"
-        },{
-            "name":"Dog Selection",
-            "img":"/assets/img/ComidaPerroAdutlo2.webp",
-            "description":"Alimento premium para perros de todas las edades y tamaños.",
-            "type": "Alimento"
-        },{
-            "name":"ALIADA - Perros Adultos",
-            "img":"/assets/img/PerroAdultoComida3.webp",
-            "description":"Alimento para perro adulto de gran tamaño",
-            "type": "Alimento"
-        },{
-            "name": "DOG CHOW - Cachorrito",
-            "img": "/assets/img/AlimentosPerritosChikitos.webp",
-            "description": "Alimento balanceado especialmente formulado para cachorros de razas pequeñas. Proporciona los nutrientes esenciales para un crecimiento saludable.",
-            "type": "Alimento"
-        },{
-            "name": "Pedigree - Cachorrito",
-            "img": "/assets/img/AlimentoCachorro2.webp",
-            "description": "Pedigree Cachorrito es una comida húmeda para cachorros, ideal para complementar su alimentación diaria. Viene en prácticas bolsitas de 85g.",
-            "type": "Alimento"
-        },{
-            "name": "Chunky - Cachorrito",
-            "img": "/assets/img/CachorroAlimento3.webp",
-            "description": "Chunky Cachorrito es un alimento seco para cachorros que proporciona una nutrición equilibrada y deliciosa para tu mascota en crecimiento.",
-            "type": "Alimento"
-        },{
-            "name": "Juguete para adultos",
-            "img": "/assets/img/juguete1.webp",
-            "description": "Juguete resistente y duradero diseñado para perros adultos. Perfecto para juegos de morder y tirar.",
-            "type": "Juguete"
-        },{
-            "name": "Pelota de cachorritos",
-            "img": "/assets/img/juguete2.webp",
-            "description": "Pelota de goma diseñada especialmente para cachorros. Ideal para juegos de buscar y morder, ayuda a estimular el desarrollo dental y mental.",
-            "type": "Juguete"
-        },{
-            "name": "Hamburguesa para cachorritos",
-            "img": "/assets/img/juguete3.webp",
-            "description": "Juguete masticable con forma de hamburguesa, ideal para cachorros en proceso de dentición. Ayuda a aliviar el dolor de encías y a fortalecer los dientes.",
-            "type": "Juguete"
-        }        
-    ]
+  "service": [
+    {
+      "title": "Curaciones",
+      "img": "/assets/img/Atencion.webp",
+      "description": "Ofrecemos servicios de curación y atención médica para mascotas, incluyendo el tratamiento de heridas, curas de heridas postoperatorias, y atención de emergencia.",
+      "type": "Servicio"
+    },
+    {
+      "title": "Antiparasitos",
+      "img": "/assets/img/AntiParasitos.webp",
+      "description": "Proporcionamos una amplia gama de tratamientos antiparasitarios para ayudar a proteger a tu mascota de pulgas, garrapatas, ácaros y otros parásitos comunes.",
+      "type": "Servicio"
+    },
+    {
+      "title": "Cirugías",
+      "img": "/assets/img/Curacion.webp",
+      "description": "Nuestro equipo de veterinarios altamente capacitados realiza una variedad de cirugías para mantener la salud y el bienestar de tu mascota, desde procedimientos de esterilización hasta cirugías correctivas.",
+      "type": "Servicio"
+    }
+  ],
+  "shop": [
+    {
+      "name": "RAZA Adultos",
+      "img": "/assets/img/PerroComidaAdulto.webp",
+      "description": "Alimento balanceado para perras adultos y tamaños.",
+      "type": "Alimento"
+    },
+    {
+      "name": "Dog Selection",
+      "img": "/assets/img/ComidaPerroAdutlo2.webp",
+      "description": "Alimento premium para perros de todas las edades y tamaños.",
+      "type": "Alimento"
+    },
+    {
+      "name": "ALIADA - Perros Adultos",
+      "img": "/assets/img/PerroAdultoComida3.webp",
+      "description": "Alimento para perro adulto de gran tamaño",
+      "type": "Alimento"
+    },
+    {
+      "name": "Pedigree - Cachorrito",
+      "img": "/assets/img/AlimentoCachorro2.webp",
+      "description": "Pedigree Cachorrito es una comida húmeda para cachorros, ideal para complementar su alimentación diaria. Viene en prácticas bolsitas de 85g.",
+      "type": "Alimento"
+    },
+    {
+      "name": "Chunky - Cachorrito",
+      "img": "/assets/img/CachorroAlimento3.webp",
+      "description": "Chunky Cachorrito es un alimento seco para cachorros que proporciona una nutrición equilibrada y deliciosa para tu mascota en crecimiento.",
+      "type": "Alimento"
+    },
+    {
+      "name": "Juguete para adultos",
+      "img": "/assets/img/juguete1.webp",
+      "description": "Juguete resistente y duradero diseñado para perros adultos. Perfecto para juegos de morder y tirar.",
+      "type": "Juguete"
+    },
+    {
+      "name": "Pelota de cachorritos",
+      "img": "/assets/img/juguete2.webp",
+      "description": "Pelota de goma diseñada especialmente para cachorros. Ideal para juegos de buscar y morder, ayuda a estimular el desarrollo dental y mental.",
+      "type": "Juguete"
+    },
+    {
+      "name": "Hamburguesa para cachorritos",
+      "img": "/assets/img/juguete3.webp",
+      "description": "Juguete masticable con forma de hamburguesa, ideal para cachorros en proceso de dentición. Ayuda a aliviar el dolor de encías y a fortalecer los dientes.",
+      "type": "Juguete"
+    }
+  ]
 }
