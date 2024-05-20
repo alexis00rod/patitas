@@ -1,6 +1,6 @@
 const wrapper = document.querySelector(".carrousel-wrapper");
 const carousel = wrapper.querySelector(".carrousel-items");
-const arrowBtns = wrapper.querySelectorAll("i");
+const arrowBtns = wrapper.querySelectorAll(".btn-carrousel");
 
 let isDragging = false,
   isAutoPlay = true,
@@ -10,9 +10,15 @@ let isDragging = false,
 
 // Función para obtener los productos
 const obtenerProductos = async () => {
-  const response = await fetch("../data/data.json");
-  const data = await response.json();
-  return data.shop;
+  const products = [];
+  const data = await fetch("../data/data.json");
+  const json = await data.json();
+
+  json.shop.forEach((e) => {
+    products.push(e);
+  });
+
+  return products.slice(0, 5);
 };
 
 // Función para mostrar los productos
@@ -20,9 +26,9 @@ const mostrarProductos = async () => {
   const productos = await obtenerProductos();
   const carousel = document.querySelector(".carrousel-items");
 
-  productos.slice(0, 5).forEach((producto) => {
+  productos.forEach((producto) => {
     const card = document.createElement("li");
-    card.className = "card";
+    card.classList.add("card");
     card.innerHTML = `
             <figure class="card-img">
               <img src="${producto.img}" alt="${producto.name}" draggable="false">
@@ -63,7 +69,7 @@ const ajustarCarrusel = () => {
   autoPlay();
 };
 
-// Event listeners
+// Funcion para manejar carrousel
 arrowBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
     const firstCardWidth = carousel.querySelector(".card").offsetWidth;
