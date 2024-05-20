@@ -1,105 +1,119 @@
-const wrapper = document.querySelector(".wrapper");
-const carousel = wrapper.querySelector(".carousel");
+const wrapper = document.querySelector(".carrousel-wrapper");
+const carousel = wrapper.querySelector(".carrousel-items");
 const arrowBtns = wrapper.querySelectorAll("i");
 
-let isDragging = false, isAutoPlay = true, startX, startScrollLeft, timeoutId;
+let isDragging = false,
+  isAutoPlay = true,
+  startX,
+  startScrollLeft,
+  timeoutId;
 
 // Función para obtener los productos
 const obtenerProductos = async () => {
-    const response = await fetch("../data/data.json");
-    const data = await response.json();
-    return data.shop;
-}
+  const response = await fetch("../data/data.json");
+  const data = await response.json();
+  return data.shop;
+};
 
 // Función para mostrar los productos
 const mostrarProductos = async () => {
-    const productos = await obtenerProductos();
-    const carousel = document.querySelector(".carousel");
+  const productos = await obtenerProductos();
+  const carousel = document.querySelector(".carrousel-items");
 
-    productos.slice(0,5).forEach(producto => {
-        const card = document.createElement("li");
-        card.className = "card";
-        card.innerHTML = `
-            <div class="img"><img src="${producto.img}" alt="${producto.name}" draggable="false"></div>
-            <h2>${producto.name}</h2>
-            <span>${producto.description}</span>
+  productos.slice(0, 5).forEach((producto) => {
+    const card = document.createElement("li");
+    card.className = "card";
+    card.innerHTML = `
+            <figure class="card-img">
+              <img src="${producto.img}" alt="${producto.name}" draggable="false">
+            </figure>
+            <div class="card-body">
+              <h3>${producto.name}</h3>
+              <span>$200</span>
+            </div>
         `;
-        carousel.appendChild(card);
-    });
+    carousel.appendChild(card);
+  });
 
-    // Después de cargar los productos, ajusta el carrusel
-    ajustarCarrusel();
-}
+  // Después de cargar los productos, ajusta el carrusel
+  ajustarCarrusel();
+};
 
 // Función para ajustar el carrusel
 const ajustarCarrusel = () => {
-    const firstCardWidth = carousel.querySelector(".card").offsetWidth;
-    const carouselChildrens = [...carousel.children];
-    const cardPerView = Math.round(carousel.offsetWidth / firstCardWidth);
+  const firstCardWidth = carousel.querySelector(".card").offsetWidth;
+  const carouselChildrens = [...carousel.children];
+  const cardPerView = Math.round(carousel.offsetWidth / firstCardWidth);
 
-    carouselChildrens.slice(-cardPerView).reverse().forEach(card => {
-        carousel.insertAdjacentHTML("afterbegin", card.outerHTML);
+  carouselChildrens
+    .slice(-cardPerView)
+    .reverse()
+    .forEach((card) => {
+      carousel.insertAdjacentHTML("afterbegin", card.outerHTML);
     });
 
-    carouselChildrens.slice(0, cardPerView).forEach(card => {
-        carousel.insertAdjacentHTML("beforeend", card.outerHTML);
-    });
+  carouselChildrens.slice(0, cardPerView).forEach((card) => {
+    carousel.insertAdjacentHTML("beforeend", card.outerHTML);
+  });
 
-    carousel.classList.add("no-transition");
-    carousel.scrollLeft = carousel.offsetWidth;
-    carousel.classList.remove("no-transition");
+  carousel.classList.add("no-transition");
+  carousel.scrollLeft = carousel.offsetWidth;
+  carousel.classList.remove("no-transition");
 
-    autoPlay();
-}
+  autoPlay();
+};
 
 // Event listeners
-arrowBtns.forEach(btn => {
-    btn.addEventListener("click", () => {
-        const firstCardWidth = carousel.querySelector(".card").offsetWidth;
-        carousel.scrollLeft += btn.id == "left" ? -firstCardWidth : firstCardWidth;
-    });
+arrowBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const firstCardWidth = carousel.querySelector(".card").offsetWidth;
+    carousel.scrollLeft += btn.id == "left" ? -firstCardWidth : firstCardWidth;
+  });
 });
 
 const dragStart = (e) => {
-    isDragging = true;
-    carousel.classList.add("dragging");
-    startX = e.pageX;
-    startScrollLeft = carousel.scrollLeft;
-}
+  isDragging = true;
+  carousel.classList.add("dragging");
+  startX = e.pageX;
+  startScrollLeft = carousel.scrollLeft;
+};
 
 const dragging = (e) => {
-    if (!isDragging) return;
-    carousel.scrollLeft = startScrollLeft - (e.pageX - startX);
-}
+  if (!isDragging) return;
+  carousel.scrollLeft = startScrollLeft - (e.pageX - startX);
+};
 
 const dragStop = () => {
-    isDragging = false;
-    carousel.classList.remove("dragging");
-}
+  isDragging = false;
+  carousel.classList.remove("dragging");
+};
 
 const infiniteScroll = () => {
-    const firstCardWidth = carousel.querySelector(".card").offsetWidth;
+  const firstCardWidth = carousel.querySelector(".card").offsetWidth;
 
-    if (carousel.scrollLeft === 0) {
-        carousel.classList.add("no-transition");
-        carousel.scrollLeft = carousel.scrollWidth - (2 * carousel.offsetWidth);
-        carousel.classList.remove("no-transition");
-    } else if (Math.ceil(carousel.scrollLeft) === carousel.scrollWidth - carousel.offsetWidth) {
-        carousel.classList.add("no-transition");
-        carousel.scrollLeft = carousel.offsetWidth;
-        carousel.classList.remove("no-transition");
-    }
+  if (carousel.scrollLeft === 0) {
+    carousel.classList.add("no-transition");
+    carousel.scrollLeft = carousel.scrollWidth - 2 * carousel.offsetWidth;
+    carousel.classList.remove("no-transition");
+  } else if (
+    Math.ceil(carousel.scrollLeft) ===
+    carousel.scrollWidth - carousel.offsetWidth
+  ) {
+    carousel.classList.add("no-transition");
+    carousel.scrollLeft = carousel.offsetWidth;
+    carousel.classList.remove("no-transition");
+  }
 
-    clearTimeout(timeoutId);
-    if (!wrapper.matches(":hover")) autoPlay();
-}
+  clearTimeout(timeoutId);
+  if (!wrapper.matches(":hover")) autoPlay();
+};
 
 const autoPlay = () => {
-    if (window.innerWidth < 800 || !isAutoPlay) return;
-    
-    const firstCardWidth = carousel.querySelector(".card").offsetWidth;
-    timeoutId = setTimeout(() => carousel.scrollLeft += firstCardWidth, 2500);
-}
+  if (window.innerWidth < 800 || !isAutoPlay) return;
+
+  const firstCardWidth = carousel.querySelector(".card").offsetWidth;
+  timeoutId = setTimeout(() => (carousel.scrollLeft += firstCardWidth), 2500);
+};
 
 mostrarProductos();
 
