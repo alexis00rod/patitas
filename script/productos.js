@@ -32,12 +32,6 @@ const mostrarProductos = async (containerProductId) => {
               <span>$200</span>
             </div>
         `;
-    // element.innerHTML = `
-    //         <img src="${producto.img}" alt="${producto.name}">
-    //         <h3>${producto.name}</h3>
-    //         <p>${producto.description}</p>
-    //         <h5>${producto.type}</h5>
-    //     `;
 
     containerProduct.appendChild(element);
   });

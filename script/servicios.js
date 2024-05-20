@@ -33,12 +33,6 @@ const mostrarServicios = async (containerServiceId) => {
               <p>${servicio.description}</p>
             </div>
         `;
-    // elemento.innerHTML = `
-    //         <h2>${servicio.title}</h2>
-    //         <img src="${servicio.img}" alt="${servicio.title}">
-    //         <p>${servicio.description}</p>
-    //         <h5>${servicio.type}</h5>
-    //     `;
 
     //creo los elementos en el HTML apenas de cargan en el DOM
     containerService.appendChild(elemento);
