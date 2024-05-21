@@ -187,8 +187,8 @@ header {
 
 /* Hero */
 .hero {
-  /* min-height: 500px; */
-  /* padding: 1rem; */
+  min-height: 500px;
+  padding: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -291,6 +291,9 @@ footer {
 .footer-right {
   display: flex;
   flex-direction: column;
+}
+.footer-left {
+  text-align: center;
 }
 .footer-bottom {
   height: 40px;
