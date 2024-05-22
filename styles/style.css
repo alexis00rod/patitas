@@ -319,6 +319,12 @@ footer {
 .footer-bottom p {
   margin: 0 !important;
 }
+.footer-bottom p a {
+  color: var(--blanco);
+}
+.footer-bottom p a:hover {
+  text-decoration: underline;
+}
 
 /* Container */
 .container {
