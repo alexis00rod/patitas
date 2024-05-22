@@ -6,8 +6,8 @@ Proyecto realizado por **Alexis Ruiz Diaz**, **Mauro Exequiel** y **Marcos Monte
 ### Division de tareas
 Para realizar el proyecto nos divimos las tareas a realizar.
 - **Mauro Exequiel:** Encargado de realizar la página de contacto con el respectivo formulario y validaciones.  
-- **Marcos Montellano:** Encargado en realizar API de servicios y productos, tambien se encargo de buscar imagenes (Logo/Icon) y a realizar el iframes.
-- **Alexis Ruiz Diaz:** Encargado en realizar el diseño, css y hacerlo responsivo. Agregando las animaciones, iconos y diferentes textos para el sitio web.
+- **Marcos Montellano:** Encargado en realizar API de servicios y productos, también se encargo de buscar imagenes (Logo/Icon) y a realizar el iframes.
+- **Alexis Ruiz Diaz:** Encargado en realizar el diseño, css y hacerlo responsivo. Agregando las animaciones, iconos y diferentes textos para el sitio web. También se encargo de crear el repositorio de github y desplegarlo en vercel
 
 ### Criterios de Evalución
 -  El sitio web debe poseer al menos 4 páginas HTML ✅
