@@ -38,6 +38,7 @@ Validación del archivo Productos.html
 ![validatorProductos](https://github.com/alexis00rod/patitas/assets/106279615/d5a1be4c-5566-43c5-b67b-0dfe6d13d0ea)
 
 Validación del archivo SobreNosotros.html
+
 ![validator sobrenosotros](https://github.com/alexis00rod/patitas/assets/106279615/cb4e7fb9-162b-471b-9b89-b2c432556832)
 
 Validación del archivo Contacto.html
