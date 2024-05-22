@@ -308,7 +308,7 @@ footer {
   text-align: center;
 }
 .footer-bottom {
-  height: 40px;
+  padding: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -318,6 +318,9 @@ footer {
 }
 .footer-bottom p {
   margin: 0 !important;
+  /* padding: 1rem; */
+  display: flex;
+  flex-wrap: wrap;
 }
 .footer-bottom p a {
   color: var(--blanco);
