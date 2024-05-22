@@ -19,7 +19,7 @@ const mostrarProductos = async (containerProductId) => {
 
   //por cada element de la api creo un div
   productos.forEach((producto) => {
-    const element = document.createElement("div");
+    const element = document.createElement("li");
     element.classList.add("product-item");
 
     //creo lo que se vera en el div
