@@ -11,7 +11,7 @@ let isDragging = false,
 // Función para obtener los productos
 const obtenerProductos = async () => {
   const products = [];
-  const data = await fetch("../data/data.json");
+  const data = await fetch("/client/data/data.json");
   const json = await data.json();
 
   json.shop.forEach((e) => {
