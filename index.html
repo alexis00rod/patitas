@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Patitas</title>
-    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./client/styles/style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -12,7 +12,11 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="icon" href="./assets/patitas-logo.png" type="image/x-icon" />
+    <link
+      rel="icon"
+      href="./client/assets/patitas-logo.png"
+      type="image/x-icon"
+    />
   </head>
   <body>
     <div class="page">
@@ -22,7 +26,7 @@
           <!-- Logo -->
           <h1 class="logo">
             <a href="./index.html">
-              <img src="./assets/patitas-logo.png" alt="Patitas logo" />
+              <img src="./client/assets/patitas-logo.png" alt="Patitas logo" />
               <span>Patitas</span>
             </a>
           </h1>
@@ -38,21 +42,23 @@
               <ul class="navbar-dropdown">
                 <!-- Productos -->
                 <li class="navbar-dropdown-item">
-                  <a href="./pages/productos.html">Productos</a>
+                  <a href="./client/pages/productos.html">Productos</a>
                 </li>
                 <!-- Servicios -->
                 <li class="navbar-dropdown-item">
-                  <a href="./pages/servicios.html">Servicios</a>
+                  <a href="./client/pages/servicios.html">Servicios</a>
                 </li>
               </ul>
             </li>
             <!-- Sobre nosotros -->
             <li class="navbar-item">
-              <a href="./pages/sobre-nosotros.html">Sobre nosotros</a>
+              <a href="./client/pages/sobre-nosotros.html">Sobre nosotros</a>
             </li>
             <!-- Contactanos -->
             <li class="navbar-item">
-              <a href="./pages/contactanos.html" class="button">Contactános</a>
+              <a href="./client/pages/contactanos.html" class="button"
+                >Contactános</a
+              >
             </li>
           </ul>
           <!-- Boton abrir navbar cuando la resolucion es menor a 1000px -->
@@ -76,16 +82,16 @@
               mascotas.
             </h3>
             <div class="hero-cta">
-              <a href="./pages/productos.html" class="btn btn-primary"
+              <a href="./client/pages/productos.html" class="btn btn-primary"
                 >Productos</a
               >
-              <a href="./pages/servicios.html" class="btn btn-primary"
+              <a href="./client/pages/servicios.html" class="btn btn-primary"
                 >Servicios</a
               >
             </div>
           </div>
           <div class="hero-right">
-            <img src="./assets/labrador.png" alt="Labrador" />
+            <img src="./client/assets/labrador.png" alt="Labrador" />
           </div>
         </section>
         <!--Carrusel Productos-->
@@ -173,7 +179,7 @@
       </div>
     </footer>
     <!-- Javascript -->
-    <script src="./script/navbar.js"></script>
-    <script src="./script/carruselProduct.js"></script>
+    <script src="./client/script/navbar.js"></script>
+    <script src="./client/script/carruselProduct.js"></script>
   </body>
 </html>
