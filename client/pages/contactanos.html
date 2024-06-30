@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Veterinaria</title>
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="page">
+      <!-- Navbar -->
+      <header>
+        <nav class="navbar">
+          <!-- Logo -->
+          <h1 class="logo">
+            <a href="../index.html">
+              <span>Veterinaria</span>
+              <img src="../assets/patitas-logo.png" alt="" />
+            </a>
+          </h1>
+          <!-- Links -->
+          <ul id="navbar-container" class="navbar-container">
+            <!-- Inicio -->
+            <li class="navbar-item">
+              <a href="../index.html">Inicio</a>
+            </li>
+            <!-- Tienda -->
+            <li class="navbar-item">
+              <span>Tienda</span>
+              <ul class="navbar-dropdown">
+                <!-- Productos -->
+                <li class="navbar-dropdown-item">
+                  <a href="./productos.html">Productos</a>
+                </li>
+                <!-- Servicios -->
+                <li class="navbar-dropdown-item">
+                  <a href="./servicios.html">Servicios</a>
+                </li>
+              </ul>
+            </li>
+            <!-- Sobre nosotros -->
+            <li class="navbar-item">
+              <a href="./sobre-nosotros.html">Sobre nosotros</a>
+            </li>
+            <!-- Contactanos -->
+            <li class="navbar-item">
+              <a href="./contactanos.html" class="button">Contactanos</a>
+            </li>
+          </ul>
+          <!-- Boton abrir navbar cuando la resolucion es menor a 1000px -->
+          <button
+            id="navbar-button"
+            class="navbar-button"
+            onclick="openNavbar()"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </nav>
+      </header>
+      <main>
+        <!-- Contactanos -->
+        <section class="contactUs container">
+          <div class="contactUs-header">
+            <h2>Envianos tu consulta</h2>
+            <p>
+              Completa el formulario con tus datos y hacenos una breve consulta
+            </p>
+          </div>
+          <!-- Formulario -->
+          <form class="form" id="formulario">
+            <!-- Grupo: Nombre -->
+            <div class="formulario__grupo" id="grupo__nombre">
+              <label for="nombre">Nombre</label>
+              <div class="formulario__grupo-input">
+                <input
+                  type="text"
+                  class="formulario__input"
+                  name="nombre"
+                  id="nombre"
+                  placeholder="Tu Nombre"
+                />
+                <i
+                  class="formulario__validacion-estado fas fa-times-circle"
+                ></i>
+              </div>
+              <p class="formulario__input-error">
+                El nombre tiene que ser mayor a 3 letras y no puede contener
+                numeros o caracteres especiales.
+              </p>
+            </div>
+            <!-- Grupo: Apellido -->
+            <div class="formulario__grupo" id="grupo__apellido">
+              <label for="apellido">Apellido</label>
+              <div class="formulario__grupo-input">
+                <input
+                  type="text"
+                  class="formulario__input"
+                  name="apellido"
+                  id="apellido"
+                  placeholder="Tu Apellido"
+                />
+                <i
+                  class="formulario__validacion-estado fas fa-times-circle"
+                ></i>
+              </div>
+              <p class="formulario__input-error">
+                El apellido tiene que ser mayor a 3 letras y no puede contener
+                numeros o caracteres especiales.
+              </p>
+            </div>
+            <!-- Grupo: Correo Electronico -->
+            <div class="formulario__grupo" id="grupo__correo">
+              <label for="correo">Correo Electrónico</label>
+              <div class="formulario__grupo-input">
+                <input
+                  type="email"
+                  class="formulario__input"
+                  name="correo"
+                  id="correo"
+                  placeholder="correo@correo.com"
+                />
+                <i
+                  class="formulario__validacion-estado fas fa-times-circle"
+                ></i>
+              </div>
+              <p class="formulario__input-error">
+                El correo solo puede contener letras, numeros, puntos, guiones y
+                guion bajo.
+              </p>
+            </div>
+            <!-- Grupo: Teléfono -->
+            <div class="formulario__grupo" id="grupo__telefono">
+              <label for="telefono">Teléfono</label>
+              <div class="formulario__grupo-input">
+                <input
+                  type="text"
+                  class="formulario__input"
+                  name="telefono"
+                  id="telefono"
+                  placeholder="1131589645"
+                />
+                <i
+                  class="formulario__validacion-estado fas fa-times-circle"
+                ></i>
+              </div>
+              <p class="formulario__input-error">
+                El telefono solo puede contener numeros y el maximo son 14
+                dígitos.
+              </p>
+            </div>
+            <div class="formulario__grupo">
+              <label for="consulta">Tu consulta</label>
+              <textarea
+                class="form-control form-field form-area-field"
+                rows="20"
+                placeholder="Dejanos aqui tu consulta."
+                name="wb_input_2"
+                required="required"
+                id="consulta"
+              ></textarea>
+            </div>
+            <!-- Grupo: Terminos y Condiciones -->
+            <div class="formulario__grupo" id="grupo__terminos">
+              <label>
+                <input
+                  class="formulario__checkbox"
+                  type="checkbox"
+                  name="terminos"
+                  id="terminos"
+                />
+                Acepto los Terminos y Condiciones
+              </label>
+            </div>
+            <p class="formulario__mensaje" id="formulario__mensaje">
+              <i class="fas fa-exclamation-triangle"></i>
+              <span>Error:</span> Por favor rellena el formulario correctamente.
+            </p>
+            <div class="formulario__grupo formulario__grupo-btn-enviar">
+              <button type="submit" class="btn btn-primary">Enviar</button>
+              <p
+                class="formulario__mensaje-exito"
+                id="formulario__mensaje-exito"
+              >
+                Formulario enviado exitosamente!
+              </p>
+            </div>
+          </form>
+        </section>
+      </main>
+    </div>
+    <footer>
+      <div class="footer">
+        <div class="container">
+          <div class="footer-left">
+            <p>¡Visítanos y descubre todo lo que tenemos para tu mascota!</p>
+            <p>Productos de calidad y atención profesional garantizada.</p>
+            <p>Nos preocupamos por el bienestar de tus amigos peludos.</p>
+          </div>
+          <div class="footer-center">
+            <h4>Contactános</h4>
+            <p><i class="fa-solid fa-phone"></i>123456789</p>
+            <p><i class="fa-solid fa-envelope"></i>patitas@email.com</p>
+            <p>
+              <i class="fa-solid fa-location-dot"></i>Av. Principal 123, Ciudad
+            </p>
+          </div>
+          <div class="footer-right">
+            <h4>Sigamos conectados</h4>
+            <div class="footer-socials">
+              <a
+                href="https://www.instagram.com/"
+                class="btn-circle btn-primary"
+                target="_blank"
+              >
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a
+                href="https://www.facebook.com/"
+                class="btn-circle btn-primary"
+                target="_blank"
+              >
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            Hecho por:
+            <a href="https://github.com/alexis00rod" target="_blank"
+              >Rodrigo Ruiz Diaz</a
+            >,
+            <a href="https://github.com/Montesit00" target="_blank"
+              >Marcos Montellano</a
+            >
+            y
+            <a href="https://github.com/MauroG2024" target="_blank"
+              >Mauro Gallone</a
+            >
+          </p>
+        </div>
+      </div>
+    </footer>
+    <!-- Javascript -->
+    <script src="../script/navbar.js"></script>
+    <script src="../script/formulario.js"></script>
+  </body>
+</html>
