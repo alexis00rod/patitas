@@ -21,48 +21,56 @@
   ],
   "shop": [
     {
+      "id": 1,
       "name": "RAZA Adultos",
       "img": "/client/assets/img/PerroComidaAdulto.webp",
       "description": "Alimento balanceado para perras adultos y tamaños.",
       "type": "Alimento"
     },
     {
+      "id": 2,
       "name": "Dog Selection",
       "img": "/client/assets/img/ComidaPerroAdutlo2.webp",
       "description": "Alimento premium para perros de todas las edades y tamaños.",
       "type": "Alimento"
     },
     {
+      "id": 3,
       "name": "ALIADA - Perros Adultos",
       "img": "/client/assets/img/PerroAdultoComida3.webp",
       "description": "Alimento para perro adulto de gran tamaño",
       "type": "Alimento"
     },
     {
+      "id": 4,
       "name": "Pedigree - Cachorrito",
       "img": "/client/assets/img/AlimentoCachorro2.webp",
       "description": "Pedigree Cachorrito es una comida húmeda para cachorros, ideal para complementar su alimentación diaria. Viene en prácticas bolsitas de 85g.",
       "type": "Alimento"
     },
     {
+      "id": 5,
       "name": "Chunky - Cachorrito",
       "img": "/client/assets/img/CachorroAlimento3.webp",
       "description": "Chunky Cachorrito es un alimento seco para cachorros que proporciona una nutrición equilibrada y deliciosa para tu mascota en crecimiento.",
       "type": "Alimento"
     },
     {
+      "id": 6,
       "name": "Juguete para adultos",
       "img": "/client/assets/img/juguete1.webp",
       "description": "Juguete resistente y duradero diseñado para perros adultos. Perfecto para juegos de morder y tirar.",
       "type": "Juguete"
     },
     {
+      "id": 7,
       "name": "Pelota de cachorritos",
       "img": "/client/assets/img/juguete2.webp",
       "description": "Pelota de goma diseñada especialmente para cachorros. Ideal para juegos de buscar y morder, ayuda a estimular el desarrollo dental y mental.",
       "type": "Juguete"
     },
     {
+      "id": 8,
       "name": "Hamburguesa para cachorritos",
       "img": "/client/assets/img/juguete3.webp",
       "description": "Juguete masticable con forma de hamburguesa, ideal para cachorros en proceso de dentición. Ayuda a aliviar el dolor de encías y a fortalecer los dientes.",

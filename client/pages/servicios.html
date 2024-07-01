@@ -15,59 +15,7 @@
     <link rel="icon" href="../assets/patitas-logo.png" type="image/x-icon" />
   </head>
   <body>
-    <div class="page">
-      <!-- Navbar -->
-      <header>
-        <nav class="navbar">
-          <!-- Logo -->
-          <h1 class="logo">
-            <a href="../../index.html">
-              <img src="../assets/patitas-logo.png" alt="Patitas logo" />
-              <span>Patitas</span>
-            </a>
-          </h1>
-          <!-- Links -->
-          <ul id="navbar-container" class="navbar-container">
-            <!-- Inicio -->
-            <li class="navbar-item">
-              <a href="../../index.html">Inicio</a>
-            </li>
-            <!-- Tienda -->
-            <li class="navbar-item">
-              <span class="active"
-                >Tienda <i class="fa-solid fa-chevron-down"></i
-              ></span>
-              <ul class="navbar-dropdown">
-                <!-- Productos -->
-                <li class="navbar-dropdown-item">
-                  <a href="./productos.html">Productos</a>
-                </li>
-                <!-- Servicios -->
-                <li class="navbar-dropdown-item">
-                  <a href="./servicios.html" class="active">Servicios</a>
-                </li>
-              </ul>
-            </li>
-            <!-- Sobre nosotros -->
-            <li class="navbar-item">
-              <a href="./sobre-nosotros.html">Sobre nosotros</a>
-            </li>
-            <!-- Contactanos -->
-            <li class="navbar-item">
-              <a href="./contactanos.html" class="button">Contactános</a>
-            </li>
-          </ul>
-          <!-- Boton abrir navbar cuando la resolucion es menor a 1000px -->
-          <button
-            type="button"
-            id="navbar-button"
-            class="navbar-button"
-            onclick="openNavbar()"
-          >
-            <i class="fa-solid fa-bars"></i>
-          </button>
-        </nav>
-      </header>
+    <div class="page" id="page">
       <main>
         <section class="container">
           <h2 class="title">Servicios</h2>
@@ -130,7 +78,7 @@
       </div>
     </footer>
     <!-- Javascript -->
-    <script src="../script/navbar.js"></script>
-    <script src="../script/servicios.js"></script>
+    <script src="/client/script/navbar.js"></script>
+    <script src="/client/script/servicios.js"></script>
   </body>
 </html>

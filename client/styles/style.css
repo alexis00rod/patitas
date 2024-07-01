@@ -8,6 +8,8 @@
   --naranja-oscuro: #b53e16;
   --rojo: #bb2929;
   --verde: #119200;
+  --azul: #007cbe;
+  --amarillo: #ffd639;
   --blanco: #f9f9ed;
   --negro: #2a2d34;
   --negro-03: rgba(42, 45, 52, 0.3);
@@ -129,7 +131,7 @@ header {
   transition-duration: var(--duracion);
   border-bottom: 0.1rem solid var(--naranja);
 }
-.navbar-container.open {
+.navbar-container.active {
   transform: translateY(0);
 }
 .navbar-container a {
@@ -348,7 +350,7 @@ footer {
 
 /* Botones */
 .btn {
-  min-width: 120px;
+  /* min-width: 120px; */
   height: 40px;
   display: flex;
   justify-content: center;
@@ -358,6 +360,9 @@ footer {
   border-radius: var(--radius);
   cursor: pointer;
   transition-duration: var(--duracion);
+}
+.btn-icon {
+  width: 40px;
 }
 .btn-circle {
   width: 40px;
@@ -377,6 +382,18 @@ footer {
 }
 .btn-primary:hover {
   background: var(--naranja-oscuro);
+}
+.btn-blue {
+  background: var(--azul);
+  color: var(--blanco);
+}
+.btn-red {
+  color: var(--blanco);
+  background: var(--rojo);
+}
+.btn-yellow {
+  color: var(--blanco);
+  background: var(--amarillo);
 }
 
 /* Card */
@@ -546,6 +563,7 @@ footer {
   gap: 2rem 1rem;
 }
 .product-item {
+  position: relative;
   width: 100%;
   padding: 1rem;
   display: flex;
@@ -594,6 +612,21 @@ footer {
   font-weight: 700;
   text-align: center;
   color: var(--naranja);
+}
+.product-item-btns {
+  position: absolute;
+  top: 8px;
+  left: 0;
+  width: max-content;
+  padding-left: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transform: translateX(-100%);
+  transition: 200ms;
+}
+.product-item:hover .product-item-btns {
+  transform: translateX(0);
 }
 
 /* Servicios */
@@ -724,35 +757,35 @@ footer {
   color: var(--naranja);
 }
 
-/* Contactanos */
-.contactUs {
+/* Pagina de formularios */
+.formPage {
   width: 100%;
   padding: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.contactUs-header h2 {
+.formPage-header h2 {
   margin-bottom: 0.5rem;
   font-size: 1.5rem;
   font-weight: 600;
   text-align: center;
 }
-.contactUs-header p {
+.formPage-header p {
   margin-bottom: 1.5rem;
   text-align: center;
 }
-.contactUs .form {
+.formPage .form {
   width: 100%;
   max-width: 600px;
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
-.contactUs .form input {
+.formPage .form input {
   width: 100%;
 }
-.contactUs .form textarea {
+.formPage .form textarea {
   width: 100%;
   height: 150px;
   padding: 0.5rem;
@@ -761,20 +794,20 @@ footer {
   border-radius: var(--radius);
   resize: none;
 }
-.contactUs .form textarea:focus {
+.formPage .form textarea:focus {
   outline: none;
   -webkit-box-shadow: 0px 0px 0px 2.5px var(--naranja);
   -moz-box-shadow: 0px 0px 0px 2.5px var(--naranja);
   box-shadow: 0px 0px 0px 2.5px var(--naranja);
 }
-.contactUs .form textarea::-webkit-scrollbar {
+.formPage .form textarea::-webkit-scrollbar {
   width: 0.5rem;
 }
-.contactUs .form textarea::-webkit-scrollbar-thumb {
+.formPage .form textarea::-webkit-scrollbar-thumb {
   background-color: var(--naranja);
   border-radius: var(--radius);
 }
-.contactUs .form label {
+.formPage .form label {
   width: max-content;
   padding: 0 0.5rem;
   margin-bottom: 0.3rem;
@@ -784,6 +817,13 @@ footer {
   font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
+}
+.formPage .link a {
+  font-size: 0.9rem;
+  color: var(--negro);
+}
+.formPage .link a:hover {
+  text-decoration: underline;
 }
 
 .formulario__grupo-input {
