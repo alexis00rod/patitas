@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const logo = document.createElement("h1");
   logo.classList.add("logo");
   const logoLink = document.createElement("a");
-  logoLink.href = "/index.html";
+  logoLink.href = "/client/index.html";
   const logoImg = document.createElement("img");
   logoImg.src = "/client/assets/patitas-logo.png";
   logoImg.alt = "Patitas logo";
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Enlaces
   const items = [
-    { text: "Inicio", href: "/index.html" },
+    { text: "Inicio", href: "/client/index.html" },
     { text: "Productos", href: "/client/pages/productos.html" },
     { text: "Sobre nosotros", href: "/client/pages/sobre-nosotros.html" },
     { text: "Contactanos", href: "/client/pages/contactanos.html" },
