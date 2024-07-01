@@ -10,11 +10,11 @@ CORS(app)
 def get_connection():
     try:
         conn = mysql.connector.connect(
-            DB_HOST="roundhouse.proxy.rlwy.net",
-            DB_PORT=37450,
-            DB_USER="root",
-            DB_PASSWORD="xogIEKdxSUdUVOCeVmJIHFPijmCvmbnO",
-            DB_DATABASE="railway"
+            host="roundhouse.proxy.rlwy.net",
+            port=37450,
+            user="root",
+            password="xogIEKdxSUdUVOCeVmJIHFPijmCvmbnO",
+            database="railway"
         )
         return conn
     except Error as e:
