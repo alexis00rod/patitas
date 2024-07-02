@@ -131,7 +131,7 @@ header {
   transition-duration: var(--duracion);
   border-bottom: 0.1rem solid var(--naranja);
 }
-.navbar-container.active {
+.navbar-container.open {
   transform: translateY(0);
 }
 .navbar-container a {
