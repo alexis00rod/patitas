@@ -9,9 +9,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const logo = document.createElement("h1");
   logo.classList.add("logo");
   const logoLink = document.createElement("a");
-  logoLink.href = "/client/index.html";
+  logoLink.href = "./index.html";
   const logoImg = document.createElement("img");
-  logoImg.src = "/client/assets/patitas-logo.png";
+  logoImg.src = "./assets/patitas-logo.png";
   logoImg.alt = "Patitas logo";
   const logoText = document.createElement("span");
   logoText.textContent = "Patitas";
@@ -26,11 +26,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Enlaces
   const items = [
-    { text: "Inicio", href: "/client/index.html" },
-    { text: "Productos", href: "/client/pages/productos.html" },
-    { text: "Sobre nosotros", href: "/client/pages/sobre-nosotros.html" },
-    { text: "Contactanos", href: "/client/pages/contactanos.html" },
-    { text: "Iniciar sesión", href: "/client/pages/login.html" },
+    { text: "Inicio", href: "./index.html" },
+    { text: "Productos", href: "./pages/productos.html" },
+    { text: "Sobre nosotros", href: "./pages/sobre-nosotros.html" },
+    { text: "Contactanos", href: "./pages/contactanos.html" },
+    { text: "Iniciar sesión", href: "./pages/login.html" },
   ];
 
   // Funcion para crear items del navbar
