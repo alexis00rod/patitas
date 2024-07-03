@@ -45,7 +45,7 @@ const mostrarProductos = async (containerProductId) => {
     botones.classList.add("product-item-btns");
     const botonEditar = document.createElement("button");
     // botonEditar.id = producto.name;
-    botonEditar.classList.add("btn", "btn-icon", "btn-blue");
+    botonEditar.classList.add("btn-icon", "btn-blue");
     botonEditar.setAttribute("onclick", `editarProducto(${producto.id})`);
     botonEditar.innerHTML = '<i class="fa-solid fa-pen"></i>';
     botones.appendChild(botonEditar);
@@ -75,15 +75,37 @@ const mostrarProductos = async (containerProductId) => {
 };
 
 const mostarModal = () => {
-  const modal = document.createElement("div")
-  
-}
+  // Modal
+  const modal = document.createElement("div");
+  modal.classList.add("modal");
+  // Modal container
+  const modalContainer = document.createElement("div");
+  modalContainer.classList.add("modal-container");
+  modal.appendChild(modalContainer);
+  // Boton cerrar modal
+  const botonCerrarModal = document.createElement("button");
+  botonCerrarModal.classList.add("closeModal");
+  botonCerrarModal.innerHTML = '<i class="fa-solid fa-x"></i>';
+  modalContainer.appendChild(botonCerrarModal);
+  modal.addEventListener("click", () => {
+    page.removeChild(modal);
+  });
+  modalContainer.addEventListener("click", (e) => {
+    e.stopPropagation();
+  });
+  botonCerrarModal.addEventListener("click", () => {
+    page.removeChild(modal);
+  });
+
+  const page = document.getElementById("page");
+  page.appendChild(modal);
+};
 
 window.editarProducto = (producto) => {
+  mostarModal();
   // const modal = document.createElement("div")
   // modal.classList.add("modal")
   // const modalContainer = document.createElement("div")
-
   // modalContainer
   // console.log("click");
   // console.log(producto);
