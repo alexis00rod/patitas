@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Patitas | Iniciar sesión</title>
+    <title>Patitas | Registrarse</title>
     <link rel="stylesheet" href="../styles/style.css" />
     <link
       rel="stylesheet"
@@ -12,11 +12,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link
-      rel="icon"
-      href="../assets/patitas-logo.png"
-      type="image/x-icon"
-    />
+    <link rel="icon" href="../assets/patitas-logo.png" type="image/x-icon" />
   </head>
   <body>
     <div class="page" id="page">
@@ -39,10 +35,10 @@
               <a href="./sobre-nosotros.html">Sobre nosotros</a>
             </li>
             <li class="navbar-item">
-              <a href="./contactanos.html" class="active">Contactános</a>
+              <a href="./contactanos.html">Contactános</a>
             </li>
             <li class="navbar-item">
-              <a href="./login.html" class="active">Iniciar sesión</a>
+              <a href="./login.html" class="active">Mi cuenta</a>
             </li>
           </ul>
           <button class="navbar-button" onclick="openNavbar()">
@@ -51,85 +47,46 @@
         </nav>
       </header>
       <main>
-        <section class="formPage container">
-          <div class="formPage-header">
-            <h2>Patitas</h2>
-            <p>Registrarse</p>
-          </div>
+        <section class="form-wrapper container">
+          <h2 class="subtitle">Registrarse</h2>
           <!-- Formulario -->
-          <form class="form" id="formulario">
-            <!-- Grupo: Nombre -->
-            <div class="formulario__grupo" id="grupo__nombre">
-              <label for="nombre">Nombre</label>
-              <div class="formulario__grupo-input">
-                <input
-                  type="text"
-                  class="formulario__input"
-                  name="nombre"
-                  id="nombre"
-                  placeholder="Tu Nombre"
-                />
-                <i
-                  class="formulario__validacion-estado fas fa-times-circle"
-                ></i>
-              </div>
-              <p class="formulario__input-error">
-                El nombre tiene que ser mayor a 3 letras y no puede contener
-                numeros o caracteres especiales.
-              </p>
+          <form class="form" id="signupForm">
+            <!-- Nombre -->
+            <div class="form-field" id="signupName">
+              <label for="name">Nombre</label>
+              <input type="text" name="name" id="name" />
+              <p class="form-message">Nombre error</p>
             </div>
-            <!-- Grupo: Correo Electronico -->
-            <div class="formulario__grupo" id="grupo__correo">
-              <label for="correo">Correo Electrónico</label>
-              <div class="formulario__grupo-input">
-                <input
-                  type="email"
-                  class="formulario__input"
-                  name="correo"
-                  id="correo"
-                  placeholder="correo@correo.com"
-                />
-                <i
-                  class="formulario__validacion-estado fas fa-times-circle"
-                ></i>
-              </div>
-              <p class="formulario__input-error">
-                El correo solo puede contener letras, numeros, puntos, guiones y
-                guion bajo.
-              </p>
+            <!-- Correo Electronico -->
+            <div class="form-field" id="signupEmail">
+              <label for="email">Correo Electrónico</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="correo@correo.com"
+              />
+              <p class="form-message">Email error</p>
             </div>
-            <!-- Grupo: Contraseña -->
-            <div class="formulario__grupo" id="grupo__password">
+            <!-- Contraseña -->
+            <div class="form-field" id="signupPassword">
               <label for="password">Contraseña</label>
-              <div class="formulario__grupo-input">
-                <input
-                  type="password"
-                  class="formulario__input"
-                  name="password"
-                  id="password"
-                />
-                <!-- <i
-                  class="formulario__validacion-estado fas fa-times-circle"
-                ></i> -->
-              </div>
-              <!-- <p class="formulario__input-error">
-                El correo solo puede contener letras, numeros, puntos, guiones y
-                guion bajo.
-              </p> -->
+              <input type="password" name="password" id="password" />
+              <p class="form-message">Contraseña error</p>
             </div>
             <!-- Link registrarse -->
-            <div class="link">
-              <a href="./login.html">¿Ya tienes una cuenta? Iniciar sesión</a>
-            </div>
+            <a class="link" href="./login.html"
+              >¿Ya tienes una cuenta? Iniciar sesión</a
+            >
             <!-- Boton submit -->
-            <div class="formulario__grupo formulario__grupo-btn-enviar">
+            <div class="form-field">
               <button type="submit" class="btn btn-primary">Registrarse</button>
-              <p
+              <!-- <p
                 class="formulario__mensaje-exito"
                 id="formulario__mensaje-exito"
               >
                 Formulario enviado exitosamente!
-              </p>
+              </p> -->
             </div>
           </form>
         </section>
@@ -191,5 +148,6 @@
     </footer>
     <!-- Javascript -->
     <script src="../script/navbar.js"></script>
+    <script src="../script/signup.js"></script>
   </body>
 </html>
