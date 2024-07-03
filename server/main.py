@@ -11,11 +11,11 @@ CORS(app)
 def get_connection():
     try:
         conn = mysql.connector.connect(
-            host="roundhouse.proxy.rlwy.net",
-            port=37450,
-            user="root",
-            password="xogIEKdxSUdUVOCeVmJIHFPijmCvmbnO",
-            database="railway"
+            host=os.getenv('DB_HOST'),
+            port=os.getenv('DB_PORT'),
+            user=os.getenv('DB_USER'),
+            password=os.getenv('DB_PASSWORD'),
+            database=os.getenv('DB_NAME')
         )
         return conn
     except Error as e:
@@ -114,4 +114,4 @@ def update_producto(producto_id):
         return jsonify({"msg": "Error al actualizar el producto"}), 500
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
+    app.run(debug=True)
