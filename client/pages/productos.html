@@ -12,11 +12,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link
-      rel="icon"
-      href="../assets/patitas-logo.png"
-      type="image/x-icon"
-    />
+    <link rel="icon" href="../assets/patitas-logo.png" type="image/x-icon" />
   </head>
   <body>
     <div class="page" id="page">
@@ -42,7 +38,7 @@
               <a href="./contactanos.html">Contactános</a>
             </li>
             <li class="navbar-item">
-              <a href="./login.html">Iniciar sesión</a>
+              <a href="./login.html">Mi cuenta</a>
             </li>
           </ul>
           <button class="navbar-button" onclick="openNavbar()">
@@ -51,8 +47,18 @@
         </nav>
       </header>
       <main>
-        <section class="container">
-          <h2 class="title">Productos</h2>
+        <section class="productsPage container">
+          <div class="productsPage-header">
+            <h2 class="title">Productos</h2>
+            <a
+              href="./post-product.html"
+              class="postProduct"
+              title="Publicar un producto nuevo"
+            >
+              <i class="fa-solid fa-plus"></i>
+              <span>Publicar un nuevo producto</span>
+            </a>
+          </div>
           <ul id="shop-container" class="products-list container"></ul>
         </section>
       </main>

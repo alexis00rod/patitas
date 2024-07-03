@@ -320,7 +320,6 @@ footer {
 }
 .footer-bottom p {
   margin: 0 !important;
-  /* padding: 1rem; */
   display: flex;
   flex-wrap: wrap;
 }
@@ -337,7 +336,6 @@ footer {
   max-width: 1200px;
   margin: 0 auto;
 }
-
 .title {
   height: 40px;
   padding: 0 1rem;
@@ -346,6 +344,19 @@ footer {
   justify-content: center;
   font-size: 1.5rem;
   text-align: center;
+}
+.subtitle {
+  margin: 1rem 0 2rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+}
+.link {
+  font-size: 0.9rem;
+  color: var(--negro);
+}
+.link:hover {
+  text-decoration: underline;
 }
 
 /* Botones */
@@ -356,6 +367,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 8px;
   font-size: 0.9rem;
   font-weight: 700;
   border-radius: var(--radius);
@@ -565,6 +577,41 @@ footer {
 }
 
 /* Productos */
+.productsPage {
+  /* border: 1px solid crimson;
+  position: relative; */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.productsPage-header {
+  padding-right: 8px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.postProduct {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  background: var(--naranja);
+  border-radius: 50%;
+  color: var(--blanco);
+  transition: var(--duracion);
+}
+.postProduct:hover {
+  background: var(--naranja-oscuro);
+}
+.postProduct span {
+  display: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
 .products-list {
   width: 100%;
   padding: 1rem;
@@ -768,34 +815,31 @@ footer {
 }
 
 /* Pagina de formularios */
-.formPage {
+.form-wrapper {
   width: 100%;
   padding: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.formPage-header h2 {
-  margin-bottom: 0.5rem;
-  font-size: 1.5rem;
-  font-weight: 600;
-  text-align: center;
-}
-.formPage-header p {
-  margin-bottom: 1.5rem;
-  text-align: center;
-}
-.formPage .form {
+.form {
   width: 100%;
-  max-width: 600px;
+  max-width: 480px;
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
-.formPage .form input {
+/* .form-wrapper .form {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.form-wrapper .form input {
   width: 100%;
 }
-.formPage .form textarea {
+.form-wrapper .form textarea {
   width: 100%;
   height: 150px;
   padding: 0.5rem;
@@ -804,20 +848,20 @@ footer {
   border-radius: var(--radius);
   resize: none;
 }
-.formPage .form textarea:focus {
+.form-wrapper .form textarea:focus {
   outline: none;
   -webkit-box-shadow: 0px 0px 0px 2.5px var(--naranja);
   -moz-box-shadow: 0px 0px 0px 2.5px var(--naranja);
   box-shadow: 0px 0px 0px 2.5px var(--naranja);
 }
-.formPage .form textarea::-webkit-scrollbar {
+.form-wrapper .form textarea::-webkit-scrollbar {
   width: 0.5rem;
 }
-.formPage .form textarea::-webkit-scrollbar-thumb {
+.form-wrapper .form textarea::-webkit-scrollbar-thumb {
   background-color: var(--naranja);
   border-radius: var(--radius);
 }
-.formPage .form label {
+.form-wrapper .form label {
   width: max-content;
   padding: 0 0.5rem;
   margin-bottom: 0.3rem;
@@ -828,15 +872,99 @@ footer {
   font-weight: 600;
   cursor: pointer;
 }
-.formPage .link a {
+.form-wrapper .link a {
   font-size: 0.9rem;
   color: var(--negro);
 }
-.formPage .link a:hover {
+.form-wrapper .link a:hover {
   text-decoration: underline;
+} */
+
+/* Formualrio campos */
+.form-field {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.form-field label {
+  width: max-content;
+  padding: 0 0.5rem;
+  margin-bottom: 0.3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.form-field input {
+  background: #fff;
+  border-radius: var(--radius);
+  height: 40px;
+  padding: 0 0.5rem;
+  transition: var(--duracion) ease all;
+  -webkit-box-shadow: 0px 0px 0px 2.5px rgba(0, 0, 0, 0);
+  -moz-box-shadow: 0px 0px 0px 2.5px rgba(0, 0, 0, 0);
+  box-shadow: 0px 0px 0px 2.5px rgba(0, 0, 0, 0);
+}
+.form-field textarea {
+  width: 100%;
+  height: 120px;
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 0.5rem;
+  transition: var(--duracion) ease all;
+  -webkit-box-shadow: 0px 0px 0px 2.5px rgba(0, 0, 0, 0);
+  -moz-box-shadow: 0px 0px 0px 2.5px rgba(0, 0, 0, 0);
+  box-shadow: 0px 0px 0px 2.5px rgba(0, 0, 0, 0);
+  resize: none;
+}
+.form-field input:focus,
+.form-field textarea:focus,
+.form-field select:focus {
+  outline: none;
+  -webkit-box-shadow: 0px 0px 0px 2.5px var(--naranja);
+  -moz-box-shadow: 0px 0px 0px 2.5px var(--naranja);
+  box-shadow: 0px 0px 0px 2.5px var(--naranja);
+}
+.form-field select {
+  background: #fff;
+  border-radius: var(--radius);
+  height: 40px;
+  padding: 0 0.5rem;
+  transition: var(--duracion) ease all;
+  -webkit-box-shadow: 0px 0px 0px 2.5px rgba(0, 0, 0, 0);
+  -moz-box-shadow: 0px 0px 0px 2.5px rgba(0, 0, 0, 0);
+  box-shadow: 0px 0px 0px 2.5px rgba(0, 0, 0, 0);
+  border: none;
+}
+.form-message {
+  margin-top: 0.3rem;
+  padding: 0 0.5rem;
+  display: none;
+  font-size: 0.8rem;
+}
+.form-field.error label {
+  color: var(--rojo);
+}
+.form-field.error input,
+.form-field.error textarea {
+  -webkit-box-shadow: 0px 0px 0px 2.5px var(--rojo);
+  -moz-box-shadow: 0px 0px 0px 2.5px var(--rojo);
+  box-shadow: 0px 0px 0px 2.5px var(--rojo);
+}
+.form-field.error input:focus,
+.form-field.error textarea:focus {
+  -webkit-box-shadow: 0px 0px 0px 2.5px var(--rojo);
+  -moz-box-shadow: 0px 0px 0px 2.5px var(--rojo);
+  box-shadow: 0px 0px 0px 2.5px var(--rojo);
+}
+.form-field.error .form-message {
+  display: block;
+  color: var(--rojo);
 }
 
-.formulario__grupo-input {
+/* .formulario__grupo-input {
   position: relative;
 }
 
@@ -952,7 +1080,7 @@ footer {
   -webkit-box-shadow: 0px 0px 0px 2.5px var(--rojo);
   -moz-box-shadow: 0px 0px 0px 2.5px var(--rojo);
   box-shadow: 0px 0px 0px 2.5px var(--rojo);
-}
+} */
 
 /* Modal */
 .modal {
@@ -1082,6 +1210,14 @@ footer {
     text-align: start;
   }
   .hero-right img {
+    display: flex;
+  }
+  .postProduct {
+    width: max-content;
+    padding: 0 1.5rem;
+    border-radius: var(--radius);
+  }
+  .postProduct span {
     display: flex;
   }
   /* Footer */
