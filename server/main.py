@@ -5,17 +5,17 @@ from flask_cors import CORS
 import os
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 # Función para obtener la conexión a MySQL
 def get_connection():
     try:
         conn = mysql.connector.connect(
-            host="roundhouse.proxy.rlwy.net",
-            port=37450,
-            user="root",
-            password="xogIEKdxSUdUVOCeVmJIHFPijmCvmbnO",
-            database="railway"
+            host=os.getenv('DB_HOST'),
+            port=os.getenv('DB_PORT'),
+            username=os.getenv('DB_USER '),
+            password=os.getenv('DB_PASSWORD'),
+            database=os.getenv('DATABASE')
         )
         return conn
     except Error as e:
@@ -30,6 +30,7 @@ def get_all_productos():
         cursor = conn.cursor(dictionary=True)
         cursor.execute("SELECT * FROM Productos")
         productos = cursor.fetchall()
+        print(productos)
         cursor.close()
         conn.close()
         return jsonify(productos)
@@ -114,5 +115,4 @@ def update_producto(producto_id):
         return jsonify({"msg": "Error al actualizar el producto"}), 500
 
 if __name__ == "__main__":
-    port = int(os.environ.get('PORT', 37450))
-    app.run(host='0.0.0.0', port=port, debug=True)
+    app.run(debug=True)
