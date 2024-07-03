@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Veterinaria</title>
+    <title>Patitas | Contactános</title>
     <link rel="stylesheet" href="../styles/style.css" />
     <link
       rel="stylesheet"
@@ -38,7 +38,7 @@
               <a href="./contactanos.html" class="active">Contactános</a>
             </li>
             <li class="navbar-item">
-              <a href="./login.html">Iniciar sesión</a>
+              <a href="./login.html">Mi cuenta</a>
             </li>
           </ul>
           <button class="navbar-button" onclick="openNavbar()">
@@ -48,130 +48,42 @@
       </header>
       <main>
         <!-- Contactanos -->
-        <section class="formPage container">
-          <div class="formPage-header">
-            <h2>Envianos tu consulta</h2>
-            <p>
-              Completa el formulario con tus datos y hacenos una breve consulta
-            </p>
-          </div>
-          <!-- Formulario -->
-          <form class="form" id="formulario">
-            <!-- Grupo: Nombre -->
-            <div class="formulario__grupo" id="grupo__nombre">
-              <label for="nombre">Nombre</label>
-              <div class="formulario__grupo-input">
-                <input
-                  type="text"
-                  class="formulario__input"
-                  name="nombre"
-                  id="nombre"
-                  placeholder="Tu Nombre"
-                />
-                <i
-                  class="formulario__validacion-estado fas fa-times-circle"
-                ></i>
-              </div>
-              <p class="formulario__input-error">
-                El nombre tiene que ser mayor a 3 letras y no puede contener
-                numeros o caracteres especiales.
-              </p>
+        <section class="form-wrapper container">
+          <h2 class="subtitle">Envianos tu consulta</h2>
+          <form class="form" id="contactForm">
+            <!-- Nombre -->
+            <div class="form-field" id="contactName">
+              <label for="name">Nombre</label
+              ><input type="text" name="name" id="name" />
+              <p class="form-message">Nombre error</p>
             </div>
-            <!-- Grupo: Apellido -->
-            <div class="formulario__grupo" id="grupo__apellido">
-              <label for="apellido">Apellido</label>
-              <div class="formulario__grupo-input">
-                <input
-                  type="text"
-                  class="formulario__input"
-                  name="apellido"
-                  id="apellido"
-                  placeholder="Tu Apellido"
-                />
-                <i
-                  class="formulario__validacion-estado fas fa-times-circle"
-                ></i>
-              </div>
-              <p class="formulario__input-error">
-                El apellido tiene que ser mayor a 3 letras y no puede contener
-                numeros o caracteres especiales.
-              </p>
+            <!-- Correo electrónico -->
+            <div class="form-field" id="contactEmail">
+              <label for="email">Correo electrónico</label
+              ><input type="email" name="email" id="email" />
+              <p class="form-message">Email error</p>
             </div>
-            <!-- Grupo: Correo Electronico -->
-            <div class="formulario__grupo" id="grupo__correo">
-              <label for="correo">Correo Electrónico</label>
-              <div class="formulario__grupo-input">
-                <input
-                  type="email"
-                  class="formulario__input"
-                  name="correo"
-                  id="correo"
-                  placeholder="correo@correo.com"
-                />
-                <i
-                  class="formulario__validacion-estado fas fa-times-circle"
-                ></i>
-              </div>
-              <p class="formulario__input-error">
-                El correo solo puede contener letras, numeros, puntos, guiones y
-                guion bajo.
-              </p>
+            <!-- Teléfono -->
+            <div class="form-field" id="contactPhone">
+              <label for="phone">Teléfono</label>
+              <input type="number" name="phone" id="phone" />
+              <p class="form-message">Teléfono error</p>
             </div>
-            <!-- Grupo: Teléfono -->
-            <div class="formulario__grupo" id="grupo__telefono">
-              <label for="telefono">Teléfono</label>
-              <div class="formulario__grupo-input">
-                <input
-                  type="text"
-                  class="formulario__input"
-                  name="telefono"
-                  id="telefono"
-                  placeholder="1131589645"
-                />
-                <i
-                  class="formulario__validacion-estado fas fa-times-circle"
-                ></i>
-              </div>
-              <p class="formulario__input-error">
-                El telefono solo puede contener numeros y el maximo son 14
-                dígitos.
-              </p>
+            <!-- Consulta -->
+            <div class="form-field" id="contactHelp">
+              <label for="help">Consulta</label
+              ><textarea name="help" id="help"></textarea>
+              <p class="form-message">Consulta error</p>
             </div>
-            <div class="formulario__grupo">
-              <label for="consulta">Tu consulta</label>
-              <textarea
-                class="form-control form-field form-area-field"
-                rows="20"
-                placeholder="Dejanos aqui tu consulta."
-                name="wb_input_2"
-                required="required"
-                id="consulta"
-              ></textarea>
-            </div>
-            <!-- Grupo: Terminos y Condiciones -->
-            <div class="formulario__grupo" id="grupo__terminos">
-              <label>
-                <input
-                  class="formulario__checkbox"
-                  type="checkbox"
-                  name="terminos"
-                  id="terminos"
-                />
-                Acepto los Terminos y Condiciones
-              </label>
-            </div>
-            <p class="formulario__mensaje" id="formulario__mensaje">
-              <i class="fas fa-exclamation-triangle"></i>
-              <span>Error:</span> Por favor rellena el formulario correctamente.
-            </p>
-            <div class="formulario__grupo formulario__grupo-btn-enviar">
+            <!-- Boton submit -->
+            <div class="form-field">
               <button type="submit" class="btn btn-primary">Enviar</button>
-              <p
+              <!-- <p
                 class="formulario__mensaje-exito"
                 id="formulario__mensaje-exito"
               >
                 Formulario enviado exitosamente!
-              </p>
+              </p> -->
             </div>
           </form>
         </section>
@@ -232,6 +144,6 @@
     </footer>
     <!-- Javascript -->
     <script src="../script/navbar.js"></script>
-    <script src="../script/formulario.js"></script>
+    <script src="../script/contact.js"></script>
   </body>
 </html>
