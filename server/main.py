@@ -7,8 +7,6 @@ import os
 app = Flask(__name__)
 CORS(app)
 
-#Holaa
-
 # Función para obtener la conexión a MySQL
 def get_connection():
     try:
@@ -116,5 +114,4 @@ def update_producto(producto_id):
         return jsonify({"msg": "Error al actualizar el producto"}), 500
 
 if __name__ == "__main__":
-    port = int(os.environ.get('PORT', 37450))
-    app.run(host='0.0.0.0', port=port, debug=True)
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
