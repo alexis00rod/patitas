@@ -7,6 +7,8 @@ import os
 app = Flask(__name__)
 CORS(app)
 
+#Holaa
+
 # Función para obtener la conexión a MySQL
 def get_connection():
     try:
