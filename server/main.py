@@ -29,16 +29,16 @@ def registro():
     try:
         user_data = request.json
         nombre = user_data["nombre"]
-        correo = user_data["correo"]
-        contrasena = user_data["contrasena"]
+        email = user_data["email"]
+        password = user_data["password"]
         isActive = True
         rol = "Usuario"
 
         conn = get_connection()
         cursor = conn.cursor(dictionary=True)
 
-        #Verifico si el correo ya existe
-        cursor.execute("SELECT * FROM Usuarios WHERE correo = %(correo)s", {"correo": correo})
+        #Verifico si el email ya existe
+        cursor.execute("SELECT * FROM Usuarios WHERE correo = %(email)s", {"email": email})
         usuario_existente = cursor.fetchone()
         if usuario_existente:
             cursor.close()
@@ -47,10 +47,10 @@ def registro():
 
         # Insertar el nuevo usuario
         query = """
-        INSERT INTO Usuarios (nombre, correo, contrasena, isActive, rol)
-        VALUES (%(nombre)s, %(correo)s, %(contrasena)s, %(isActive)s, %(rol)s)
+        INSERT INTO Usuarios (nombre, email, password, isActive, rol)
+        VALUES (%(nombre)s, %(email)s, %(password)s, %(isActive)s, %(rol)s)
         """
-        cursor.execute(query, {"nombre": nombre, "correo": correo, "contrasena": contrasena, "isActive": isActive, "rol": rol})
+        cursor.execute(query, {"nombre": nombre, "email": email, "password": password, "isActive": isActive, "rol": rol})
         conn.commit()
         cursor.close()
         conn.close()
