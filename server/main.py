@@ -7,7 +7,7 @@ import os
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*"}})
 
-# Función para obtener la conexión a MySQL
+#Funcion donde se realiza la conexion a la bd en la nube
 def get_connection():
     try:
         conn = mysql.connector.connect(
@@ -22,6 +22,57 @@ def get_connection():
         print(f"Error al conectar a la base de datos MySQL: {e}")
         raise
 
+### Funciones de REGISTRO Y LOGIN para iniciar sesion
+#Ruta para registrar un usuario
+@app.route("/usuario/registro", methods=["POST"])
+def registrar_usuario():
+    try:
+        user_data = request.json
+        nombre = user_data["nombre"]
+        email = user_data["email"]
+        password = user_data["password"]
+        isActive = True
+        rol = "Usuario"
+
+        conn = get_connection()
+        cursor = conn.cursor(dictionary=True)
+        query = """
+        INSERT INTO Usuarios (nombre, email, password, isActive, rol)
+        VALUES (%(nombre)s, %(email)s, %(password)s, %(isActive)s, %(rol)s)
+        """
+        cursor.execute(query, {"nombre": nombre, "email": email, "password": password, "isActive": isActive, "rol": rol})
+        conn.commit()
+        cursor.close()
+        conn.close()
+        return jsonify({"msg": "Usuario registrado correctamente"}), 201
+    except (Error, KeyError) as e:
+        print(f"Error al registrar un usuario: {e}")
+        return jsonify({"msg": "Error al registrar un usuario"}), 500
+
+#Ruta para login
+@app.route("/usuario/login", methods=["POST"])
+def login():
+    try:
+        user_data = request.json
+        email = user_data["email"]
+        password = user_data["password"]
+
+        conn = get_connection()
+        cursor = conn.cursor(dictionary=True)
+        cursor.execute("SELECT * FROM Usuarios WHERE email = %(email)s AND password = %(password)s", {"email": email, "password": password})
+        usuario = cursor.fetchone()
+        cursor.close()
+        conn.close()
+
+        if usuario:
+            return jsonify({"msg": "Inicio de sesión exitoso"}), 200
+        else:
+            return jsonify({"msg": "Correo o contraseña incorrectos"}), 401
+    except Error as e:
+        print(f"Error al iniciar sesión: {e}")
+        return jsonify({"msg": "Error al iniciar sesión"}), 500
+
+## Funciones del CRUD para productos
 # Ruta para obtener todos los productos
 @app.route("/productos/todos", methods=["GET"])
 def get_all_productos():
@@ -46,8 +97,8 @@ def post_crear_producto():
         conn = get_connection()
         cursor = conn.cursor(dictionary=True)
         query = """
-        INSERT INTO Productos (nombre_producto, precio, descripcion)
-        VALUES (%(nombre_producto)s, %(precio)s, %(descripcion)s)
+        INSERT INTO Productos (nombre_producto, precio, descripcion, tipo)
+        VALUES (%(nombre_producto)s, %(precio)s, %(descripcion)s, %(tipo)s)
         """
         cursor.execute(query, product_data)
         conn.commit()
@@ -101,10 +152,16 @@ def update_producto(producto_id):
         cursor = conn.cursor(dictionary=True)
         query = """
         UPDATE Productos
-        SET nombre_producto = %(nombre_producto)s, precio = %(precio)s, descripcion = %(descripcion)s
+        SET nombre_producto = %(nombre_producto)s, precio = %(precio)s, descripcion = %(descripcion)s, tipo = %(tipo)s
         WHERE id = %(id)s
         """
-        cursor.execute(query, {"nombre_producto": product_data["nombre_producto"], "precio": product_data["precio"], "descripcion": product_data["descripcion"], "id": producto_id})
+        cursor.execute(query, {
+            "nombre_producto": product_data["nombre_producto"],
+            "precio": product_data["precio"],
+            "descripcion": product_data["descripcion"],
+            "tipo": product_data["tipo"],
+            "id": producto_id
+        })
         conn.commit()
         cursor.close()
         conn.close()
