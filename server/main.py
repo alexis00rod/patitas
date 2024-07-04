@@ -11,11 +11,11 @@ CORS(app, resources={r"/*": {"origins": "*"}})
 def get_connection():
     try:
         conn = mysql.connector.connect(
-            host=os.getenv('DB_HOST'),
-            port=os.getenv('DB_PORT'),
-            username=os.getenv('DB_USER '),
-            password=os.getenv('DB_PASSWORD'),
-            database=os.getenv('DATABASE')
+            host="roundhouse.proxy.rlwy.net",
+            port=37450,
+            username="root",
+            password="xogIEKdxSUdUVOCeVmJIHFPijmCvmbnO",
+            database="railway"
         )
         return conn
     except Error as e:
