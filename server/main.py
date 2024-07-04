@@ -25,22 +25,32 @@ def get_connection():
 ### Funciones de REGISTRO Y LOGIN para iniciar sesion
 #Ruta para registrar un usuario
 @app.route("/usuario/registro", methods=["POST"])
-def registrar_usuario():
+def registro():
     try:
         user_data = request.json
         nombre = user_data["nombre"]
-        email = user_data["email"]
-        password = user_data["password"]
+        correo = user_data["correo"]
+        contrasena = user_data["contrasena"]
         isActive = True
         rol = "Usuario"
 
         conn = get_connection()
         cursor = conn.cursor(dictionary=True)
+
+        #Verifico si el correo ya existe
+        cursor.execute("SELECT * FROM Usuarios WHERE correo = %(correo)s", {"correo": correo})
+        usuario_existente = cursor.fetchone()
+        if usuario_existente:
+            cursor.close()
+            conn.close()
+            return jsonify({"msg": "El correo ya está registrado"}), 400
+
+        # Insertar el nuevo usuario
         query = """
-        INSERT INTO Usuarios (nombre, email, password, isActive, rol)
-        VALUES (%(nombre)s, %(email)s, %(password)s, %(isActive)s, %(rol)s)
+        INSERT INTO Usuarios (nombre, correo, contrasena, isActive, rol)
+        VALUES (%(nombre)s, %(correo)s, %(contrasena)s, %(isActive)s, %(rol)s)
         """
-        cursor.execute(query, {"nombre": nombre, "email": email, "password": password, "isActive": isActive, "rol": rol})
+        cursor.execute(query, {"nombre": nombre, "correo": correo, "contrasena": contrasena, "isActive": isActive, "rol": rol})
         conn.commit()
         cursor.close()
         conn.close()
