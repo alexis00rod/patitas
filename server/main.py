@@ -38,7 +38,7 @@ def registro():
         cursor = conn.cursor(dictionary=True)
 
         #Verifico si el email ya existe
-        cursor.execute("SELECT * FROM Usuarios WHERE correo = %(email)s", {"email": email})
+        cursor.execute("SELECT * FROM Usuarios WHERE email = %(email)s", {"email": email})
         usuario_existente = cursor.fetchone()
         if usuario_existente:
             cursor.close()
