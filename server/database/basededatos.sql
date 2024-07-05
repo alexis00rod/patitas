@@ -19,9 +19,11 @@ CREATE TABLE Productos (
     descripcion VARCHAR(200)
 );
 
--- Tabla Servicios
-CREATE TABLE Servicios (
+-- Tabla Contacto
+CREATE TABLE Contacto (
     id VARCHAR(200) PRIMARY KEY,
-    nombre_servicio VARCHAR(15),
-    descripcion VARCHAR(200)
+    nombre_contacto VARCHAR(100) NOT NULL,
+    email VARCHAR(200) NOT NULL,
+    telefono VARCHAR(20),
+    consulta VARCHAR(200)
 );
