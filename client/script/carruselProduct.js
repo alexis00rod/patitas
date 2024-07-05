@@ -10,15 +10,18 @@ let isDragging = false,
 
 // Función para obtener los productos
 const obtenerProductos = async () => {
-  const products = [];
-  const data = await fetch("/client/data/data.json");
+  // const products = [];
+  // const data = await fetch("/client/data/data.json");
+  // const json = await data.json();
+
+  // json.shop.forEach((e) => {
+  //   products.push(e);
+  // });
+
+  // return products.slice(0, 5);
+  const data = await fetch("https://patitas.up.railway.app/productos/todos");
   const json = await data.json();
-
-  json.shop.forEach((e) => {
-    products.push(e);
-  });
-
-  return products.slice(0, 5);
+  return json.slice(0, 5);
 };
 
 // Función para mostrar los productos
@@ -30,12 +33,12 @@ const mostrarProductos = async () => {
     const card = document.createElement("li");
     card.classList.add("card");
     card.innerHTML = `
-            <figure class="card-img">
-              <img src="${producto.img}" alt="${producto.name}" draggable="false">
+            <figure class="product-item-img">
+              <img src="./assets/labrador.png" alt="Labrador"/>
             </figure>
-            <div class="card-body">
-              <h3>${producto.name}</h3>
-              <span>$200</span>
+            <div class="product-item-body">
+              <h3>${producto.nombre_producto}</h3>
+              <span>$${producto.precio}</span>
             </div>
         `;
     carousel.appendChild(card);
