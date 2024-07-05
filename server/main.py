@@ -189,8 +189,8 @@ def create_contacto():
         conn = get_connection()
         cursor = conn.cursor(dictionary=True)
         query = """
-        INSERT INTO Contacto (id, nombre_contacto, email, telefono, consulta)
-        VALUES (%(id)s, %(nombre_contacto)s, %(email)s, %(telefono)s, %(consulta)s)
+        INSERT INTO Contacto (nombre_contacto, email, telefono, consulta)
+        VALUES (%(nombre_contacto)s, %(email)s, %(telefono)s, %(consulta)s)
         """
         cursor.execute(query, contact_data)
         conn.commit()

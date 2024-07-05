@@ -3,7 +3,7 @@ USE tp_backend;
 
 -- Tabla Usuarios
 CREATE TABLE Usuarios (
-    id VARCHAR(200) PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(45),
     password VARCHAR(200),
     email VARCHAR(200),
@@ -13,7 +13,7 @@ CREATE TABLE Usuarios (
 
 -- Tabla Productos
 CREATE TABLE Productos (
-    id VARCHAR(200) PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     nombre_producto VARCHAR(100),
     precio VARCHAR(100),
     descripcion VARCHAR(200)
@@ -21,7 +21,7 @@ CREATE TABLE Productos (
 
 -- Tabla Contacto
 CREATE TABLE Contacto (
-    id VARCHAR(200) PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     nombre_contacto VARCHAR(100) NOT NULL,
     email VARCHAR(200) NOT NULL,
     telefono VARCHAR(20),
