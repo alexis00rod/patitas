@@ -85,7 +85,7 @@ def login():
 ## Funciones del CRUD para productos
 # Ruta para obtener todos los productos
 @app.route("/productos/todos", methods=["GET"])
-def get_all_productos():
+def all_productos():
     try:
         conn = get_connection()
         cursor = conn.cursor(dictionary=True)
@@ -101,7 +101,7 @@ def get_all_productos():
 
 # Ruta para crear un producto
 @app.route("/productos/crear", methods=["POST"])
-def post_crear_producto():
+def crear_producto():
     try:
         product_data = request.json
         conn = get_connection()
@@ -180,6 +180,26 @@ def update_producto(producto_id):
         print(f"Error al actualizar el producto por ID: {e}")
         conn.rollback()
         return jsonify({"msg": "Error al actualizar el producto"}), 500
+
+#Ruta para crear un contacto
+@app.route("/contacto/crear", methods=["POST"])
+def create_contacto():
+    try:
+        contact_data = request.json
+        conn = get_connection()
+        cursor = conn.cursor(dictionary=True)
+        query = """
+        INSERT INTO Contacto (nombre_contacto, email, telefono, consulta)
+        VALUES (%(nombre_contacto)s, %(email)s, %(telefono)s, %(consulta)s)
+        """
+        cursor.execute(query, contact_data)
+        conn.commit()
+        cursor.close()
+        conn.close()
+        return jsonify({"msg": "Contacto creado correctamente"}), 201
+    except (Error, KeyError) as e:
+        print(f"Error al crear un contacto: {e}")
+        return jsonify({"msg": "Error al crear un contacto"}), 500
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
