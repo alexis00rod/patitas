@@ -35,10 +35,30 @@ document.addEventListener("DOMContentLoaded", () => {
         email: email.value,
         password: password.value,
       };
-      console.log(usuario);
+      const loginUsuario = async () => {
+        const response = await fetch(
+          `https://patitas.up.railway.app/usuario/login`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(usuario),
+          }
+        );
+        if (response.ok) {
+          alert("Se inicio de sesión correctamente");
+          window.location.href = "../index.html";
+        } else {
+          const json = await response.json();
+          alert(json.msg);
+          // alert("Error al iniciar sesión");
+        }
+      };
+      loginUsuario();
     } else {
       // Si no es valido
-      console.log("Error formulario");
+      alert("Completa correctamente el formulario");
     }
   });
 });

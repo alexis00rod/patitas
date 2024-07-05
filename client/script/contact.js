@@ -50,10 +50,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (validate) {
       // Si es valido
-      console.log("Formulario enviado");
+      const consulta = {
+        nombre_contacto: name.value,
+        email: email.value,
+        telefono: phone.value,
+        consulta: help.value,
+      };
+      const enviarConsulta = async () => {
+        const response = await fetch(
+          "https://patitas.up.railway.app/contacto/crear",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(consulta),
+          }
+        );
+        if (response.ok) {
+          alert("Su consulta se envio correctamente");
+          window.location.href = "../index.html";
+        } else {
+          const json = await response.json();
+          alert(json.msg);
+        }
+      };
+      enviarConsulta();
     } else {
       // Si no es valido
-      console.log("Error formulario");
+      alert("Completa correctamente el formulario");
     }
   });
 });

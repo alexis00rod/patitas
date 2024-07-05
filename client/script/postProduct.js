@@ -48,15 +48,34 @@ document.addEventListener("DOMContentLoaded", () => {
     if (validate) {
       // Si es valido
       const producto = {
-        name: name.value,
-        description: description.value,
-        price: price.value,
-        type: type.value,
+        nombre_producto: name.value,
+        descripcion: description.value,
+        precio: price.value,
+        tipo: type.value,
       };
-      console.log(producto);
+      const postProducto = async () => {
+        const response = await fetch(
+          `https://patitas.up.railway.app/productos/crear`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(producto),
+          }
+        );
+        if (response.ok) {
+          alert("producto creado correctamente");
+          window.location.href = "../pages/productos.html";
+        } else {
+          alert("error al crear producto");
+        }
+        return json;
+      };
+      postProducto();
     } else {
       // Si no es valido
-      console.log("Error formulario");
+      alert("Error formulario");
     }
   });
 });

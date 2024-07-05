@@ -1,20 +1,15 @@
 // Funcion obtener todos los productos
 const obtenerProductos = async () => {
-  const products = [];
-  const data = await fetch("../data/data.json");
+  const data = await fetch("https://patitas.up.railway.app/productos/todos");
   const json = await data.json();
-
-  json.shop.forEach((e) => {
-    products.push(e);
-  });
-
-  return products;
+  return json;
 };
 
 // Funcion obtener producto por id
 const obtenerProductoPorId = async (id) => {
-  const productos = await obtenerProductos();
-  return productos.find((producto) => producto.id === id);
+  const data = await fetch(`https://patitas.up.railway.app/producto/${id}`);
+  const json = await data.json();
+  return json;
 };
 
 //funcion para mostrar los productos
@@ -27,14 +22,15 @@ const mostrarProductos = async (containerProductId) => {
   //por cada element de la api creo un div
   productos.forEach((producto) => {
     const li = document.createElement("li");
+    li.id = `producto-${producto.id}`;
     li.classList.add("product-item");
     li.innerHTML = `
       <figure class="product-item-img">
-        <img src="${producto.img}" alt="${producto.name}"/>
+        <img src="../assets/labrador.png" alt="Labrador"/>
       </figure>
       <div class="product-item-body">
-        <h3>${producto.name}</h3>
-        <span>$${producto.price}</span>
+        <h3>${producto.nombre_producto}</h3>
+        <span>$${producto.precio}</span>
       </div>
       <div class="product-item-btns">
         <button class="btn-icon btn-blue" title="Editar producto" onclick="editarProducto(${producto.id})">
@@ -84,20 +80,74 @@ const mostarModal = (producto) => {
   // Formulario editar producto
   const formularioEditar = document.createElement("form");
   formularioEditar.classList.add("form");
-  formularioEditar.innerHTML = `
-    <div class="form-field">
-      <label for="name">Nombre</label>
-      <input  type="text" name="name" id="name" value="${producto.name}"/>
-    </div>
-    <div class="form-field">
-      <label for="price">Precio</label>
-      <input type="text" name="price" id="price" value="${producto.price}" />
-    </div>
-  `;
+
+  // Editar nombre
+  const nombreProducto = document.createElement("div");
+  nombreProducto.classList.add("form-field");
+  const nombreProductoLabel = document.createElement("label");
+  nombreProductoLabel.htmlFor = "name";
+  nombreProductoLabel.innerText = "Nombre";
+  const nombreProductoInput = document.createElement("input");
+  nombreProductoInput.type = "text";
+  nombreProductoInput.name = "name";
+  nombreProductoInput.id = "name";
+  nombreProductoInput.value = producto.nombre_producto;
+  nombreProducto.appendChild(nombreProductoLabel);
+  nombreProducto.appendChild(nombreProductoInput);
+  formularioEditar.appendChild(nombreProducto);
+
+  // Editar precio
+  const precioProducto = document.createElement("div");
+  precioProducto.classList.add("form-field");
+  const precioProductoLabel = document.createElement("label");
+  precioProductoLabel.htmlFor = "price";
+  precioProductoLabel.innerText = "Precio";
+  const precioProductoInput = document.createElement("input");
+  precioProductoInput.type = "number";
+  precioProductoInput.name = "price";
+  precioProductoInput.id = "price";
+  precioProductoInput.value = producto.precio;
+  precioProducto.appendChild(precioProductoLabel);
+  precioProducto.appendChild(precioProductoInput);
+  formularioEditar.appendChild(precioProducto);
+
+  // Boton confirmar
+  const guardarProducto = document.createElement("button");
+  guardarProducto.classList.add("btn-icon", "btn-primary");
+  guardarProducto.innerHTML = "<i class='fa-solid fa-check'></i>";
+  formularioEditar.appendChild(guardarProducto);
+
+  // Funcion editar producto
+  formularioEditar.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const productoActualizado = {
+      nombre_producto: nombreProductoInput.value,
+      precio: precioProductoInput.value,
+      descripcion: producto.descripcion,
+      tipo: producto.tipo,
+    };
+    const actualizarProducto = async () => {
+      const response = await fetch(
+        `https://patitas.up.railway.app/producto/actualizar/${producto.id}`,
+        {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(productoActualizado),
+        }
+      );
+      if (response.ok) {
+        mostrarProductos("shop-container");
+        window.location.href = "../pages/productos.html";
+      } else {
+        alert("error al actualizar producto");
+      }
+    };
+    actualizarProducto();
+  });
 
   modalContainer.appendChild(formularioEditar);
-
-  console.log(producto);
 
   const page = document.getElementById("page");
   page.appendChild(modal);
@@ -111,8 +161,22 @@ window.editarProducto = async (id) => {
 
 // Funcion eliminar producto
 window.eliminarProducto = async (id) => {
-  const producto = await obtenerProductoPorId(id);
-  console.log(`${producto.name} se elimino exitosamente!`);
+  const producto = document.getElementById(`producto-${id}`);
+  const response = await fetch(
+    `https://patitas.up.railway.app/producto/eliminar/${id}`,
+    {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  );
+  if (response.ok) {
+    producto.remove();
+    alert("producto eliminado correctamente");
+  } else {
+    alert("error al eliminar producto");
+  }
 };
 
 mostrarProductos("shop-container");

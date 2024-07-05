@@ -40,14 +40,33 @@ document.addEventListener("DOMContentLoaded", () => {
     if (validate) {
       // Si es valido
       const usuario = {
-        name: name.value,
+        nombre: name.value,
         email: email.value,
         password: password.value,
       };
-      console.log(usuario);
+      const registrarUsuario = async () => {
+        const response = await fetch(
+          `https://patitas.up.railway.app/usuario/registro`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(usuario),
+          }
+        );
+        if (response.ok) {
+          alert("Usuario registrado correctamente");
+          window.location.href = "../pages/login.html";
+        } else {
+          const json = await response.json();
+          alert(json.msg);
+        }
+      };
+      registrarUsuario();
     } else {
       // Si no es valido
-      console.log("Error formulario");
+      alert("Completa el formulario correctamente");
     }
   });
 });
